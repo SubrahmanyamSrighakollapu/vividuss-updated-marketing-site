@@ -1,0 +1,299 @@
+{
+  "generator": "Built-in image_gen",
+  "pass": "One generation per requested asset; no retries or variants. Standard WebP conversion only, no scene edits.",
+  "count": 22,
+  "images": [
+    {
+      "name": "home-hero",
+      "prompt": "Use case: ads-marketing. Asset type: premium photorealistic website hero background, widescreen 16:9. Create a large polished glass-and-metal letter V sculpture on the right 60% of a circular modern pale stone table inside a bright glass office. Inside the thick V shape is an immersive double-exposure scene: a young Indian man seen from behind in a dark navy shirt looking out at a magnificent blue city skyline at sunrise. The V is a sculptural portal, its silhouette clear, elegant metallic edge, slightly rounded corners. The circular table curves along the bottom, tiny potted green plant near V. Composition: entire left 40% is clean, pale white-blue empty negative space for HTML text; main V starts at the middle and reaches close to right/top/bottom, confident visual scale. Premium realistic editorial photography plus polished architectural 3D, crisp glass reflections, luminous sunrise, pale blue and white with navy and subtle amber. No text, no logos, no graphic badges, no UI, no navigation, no buttons, no website screenshot, no watermark.",
+      "generated": true,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "webp_bytes": 117862,
+      "file": "public/images/home-hero.webp"
+    },
+    {
+      "name": "about-office",
+      "prompt": "Use case: photorealistic-natural. Asset type: widescreen 16:9 premium office image for website. Bright premium modern Indian technology company office reception. Floor-to-ceiling glass wall, sleek wood bench, minimalist plants. On the right wall a large physical three-dimensional navy blue wordmark exactly 'VIVIDUSS' with small amber tagline exactly 'VALUE TO YOUR BUSINESS'. A simple abstract V emblem in navy and amber to left of wordmark. Perspective like architectural interior photography, right two-thirds hold wall signage and office, left third has clean glass and subtle deep blue tinted overlay area appropriate for HTML text. Realistic materials, daylight, elegant navy/blue/amber brand palette. No other text, no webpage UI, no navigation, no button overlays, no watermark.",
+      "generated": true,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "webp_bytes": 123152,
+      "file": "public/images/about-office.webp"
+    },
+    {
+      "name": "team",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 website editorial photograph. Four diverse Indian designers and developers, two women and two men in their twenties and thirties, gathered around a laptop in a bright contemporary office. Navy shirts, ivory blouse and pale blue business-casual clothing. Natural joyful collaborative moment, looking at laptop and discussing work, realistic relaxed expressions and hands. Sunlit glass walls, softly blurred green plant, professional but friendly. Crop waist-up, subjects occupy center and right, laptop visible at bottom. Premium high-resolution commercial photography, soft daylight, white and blue palette. No text, logos, no UI or page layout overlays, no watermark.",
+      "generated": true,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "webp_bytes": 147546,
+      "file": "public/images/team.webp"
+    },
+    {
+      "name": "building",
+      "prompt": "Use case: photorealistic-natural. Asset type: portrait 3:4 website architectural photograph. Dramatic upward view from street level of a premium modern glass office building, clean blue reflective facade with grid windows and angular overlapping volumes, against rich blue sky and a few white clouds. Contemporary Indian business district, no visible people, realistic architectural photography, soft sun reflections. Premium cool blue and white color palette with crisp structural detail. No text, no logos, no UI overlays, no watermark.",
+      "generated": true,
+      "dimensions": [
+        1086,
+        1448
+      ],
+      "webp_bytes": 326116,
+      "file": "public/images/building.webp"
+    },
+    {
+      "name": "contact",
+      "prompt": "Use case: photorealistic-natural. Asset type: widescreen 16:9 website contact hero background. A friendly smiling Indian female customer support consultant in her late twenties with long dark hair wearing a black telephone headset and navy business blazer, seated in a bright modern glass office. She is positioned in the right half of the frame, smiling naturally and looking slightly left, one hand lightly touches the headset microphone. Left 40% is softly blurred pale white-blue empty office light appropriate for HTML headline. Premium high-resolution realistic editorial photography, soft daylight and shallow depth of field, cool blue and navy palette. No text, no logos, no UI overlay, no navigation, no badges, no watermark.",
+      "generated": true,
+      "dimensions": [
+        1672,
+        941
+      ],
+      "webp_bytes": 84102,
+      "file": "public/images/contact.webp"
+    },
+    {
+      "name": "franchise",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 website franchise hero photograph. Contemporary small premium technology storefront office, complete storefront seen at a slight angle, rich navy sign awning with a simple navy-white-amber V emblem and physical white wordmark exactly 'VIVIDUSS', small amber tagline exactly 'VALUE TO YOUR BUSINESS'. Floor-to-ceiling glass front, welcoming warm amber interior, a couple of modern navy chairs, slim reception desk visible inside, potted plants flanking entrance. Bright clean pale blue and white surroundings, soft daylight, realistic architectural commercial photography. Store occupies center and right of composition with a little clean pale space left. No other readable text, no website layout, no badges, no watermark.",
+      "generated": true,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "webp_bytes": 260040,
+      "file": "public/images/franchise.webp"
+    },
+    {
+      "name": "founder",
+      "prompt": "Use case: photorealistic-natural. Asset type: landscape 3:2 website entrepreneur portrait. Smiling Indian male entrepreneur in his early thirties, neat dark hair, well groomed short beard, rectangular glasses, dressed in navy blazer over light blue shirt, sitting at a bright desk with a silver laptop in a modern sunlit office. Subject centered slightly right, confident friendly natural smile toward camera, hands naturally at laptop. Soft bright office background, glass windows, subtle green plant. Premium realistic editorial business photography, white, pale blue and navy palette. No text, no logos, no page layout, no graphic overlays, no watermark.",
+      "generated": true,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "webp_bytes": 84536,
+      "file": "public/images/founder.webp"
+    },
+    {
+      "name": "mountain-banner",
+      "prompt": "Use case: photorealistic-natural. Asset type: ultrawide 21:9 website call-to-action banner background. A lone hiker seen from behind standing on a rugged rocky mountain summit positioned at the right 75% horizontal point, looking out across layered blue mountain ranges at dawn. Hiker wears navy outdoor clothing and a small backpack, full body visible. Blue atmospheric mountain layers extend across the whole frame, subtle warm amber sunrise just beyond far right. Left 60% is low detail deep navy blue mountains and shadow with abundant empty space for HTML headline and button. Premium cinematic realistic landscape photography. No text, no symbols, no website UI, no watermark.",
+      "generated": true,
+      "dimensions": [
+        1916,
+        821
+      ],
+      "webp_bytes": 127560,
+      "file": "public/images/mountain-banner.webp"
+    },
+    {
+      "name": "web-hero",
+      "prompt": "Use case: product-mockup. Asset type: landscape 3:2 website development service hero photograph. A premium silver laptop on a white desk, large display at slight perspective facing camera, showing a polished modern architecture business website. Within the laptop screen only: clean white background, compact navy navigation, architectural glass building photograph on right, bold short headline on left exactly 'Digital Experiences That Matter', small navy button. Small potted green plant to left of laptop, bright pale blue modern office background, soft white daylight, crisp realistic hardware and premium product photography. Laptop dominates center and right. No text or graphics outside the laptop screen, no webpage screenshot surrounding the scene, no decorative badges, no watermark.",
+      "generated": true,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "webp_bytes": 118964,
+      "file": "public/images/web-hero.webp"
+    },
+    {
+      "name": "mobile-hero",
+      "prompt": "Use case: product-mockup. Asset type: landscape 3:2 website mobile app development service hero. Two large premium dark-edged smartphones floating at slightly different natural angles against a clean pale blue and white studio background, subtle shadows and glass reflections. Left/back phone has a deep blue welcome screen with a small abstract V mark and a short elegant headline exactly 'Discover A Smarter Tomorrow', small white rounded button. Right/front phone has a refined white ecommerce app interface with blue feature tile, colorful category icons and small product photos, headline exactly 'Hi, Alex'. Both smartphones complete and visually balanced, overlap slightly, fill most of the composition. Premium realistic product photography with sophisticated high-end 3D rendering, blue and white palette. No text outside screens, no app store badges, no webpage UI, no watermark.",
+      "generated": true,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "webp_bytes": 142768,
+      "file": "public/images/mobile-hero.webp"
+    },
+    {
+      "name": "whatsapp-hero",
+      "prompt": "Use case: product-mockup. Asset type: landscape 3:2 website WhatsApp CRM service hero. A large premium smartphone, full phone visible with slight three-quarter angle, displaying a simple recognizable WhatsApp Business conversation interface. Phone screen: deep green chat header labeled exactly 'Your Business', recognizable round WhatsApp Business B chat logo, pale patterned chat background, a white incoming message exactly 'Hi! Welcome to Vividuss. How can we help you today?', three simple option message cards exactly 'Explore Services', 'Get a Quote', 'Talk to Support', a pale green reply exactly 'Get a Quote', bottom message input. Clean pale mint/white studio background with soft green glow and delicate shadow. Phone centered slightly right and dominates frame. Premium photorealistic hardware, crisp glass edges. No text or badges outside phone screen, no whole webpage UI or navigation, no watermark.",
+      "generated": true,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "webp_bytes": 51110,
+      "file": "public/images/whatsapp-hero.webp"
+    },
+    {
+      "name": "social-hero",
+      "prompt": "Use case: ads-marketing. Asset type: landscape 3:2 social media marketing website hero photograph. Happy Indian woman in her late twenties with long dark brown hair wearing a bright mustard yellow jumper, smiling naturally while looking down at a smartphone held with both hands. Waist-up woman centered slightly right, pale blue and white softly blurred studio/office background. A few colorful glossy floating social platform app icons surround her without obscuring face or hands: Instagram, Facebook, YouTube, TikTok and X, recognizable simple icons. Premium commercial photography with subtly integrated polished 3D icons, soft bright daylight, blue/white and yellow palette. No text, no counts or badges, no charts, no webpage navigation or page layout, no watermark.",
+      "generated": true,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "webp_bytes": 178256,
+      "file": "public/images/social-hero.webp"
+    },
+    {
+      "name": "seo-hero",
+      "prompt": "Use case: product-mockup. Asset type: landscape 3:2 SEO marketing website hero. Premium silver laptop on white desk in a bright pale blue modern office. Screen facing camera at slight three-quarter perspective, displaying a clean stylized Google-like search results page: multicolor 'Google' wordmark, search field containing 'Your Business', simple blue search result title and muted grey text lines. On the right side within display, blue ascending bars and a bright green upward arrow show search growth. Small green plant next to laptop, subtle reflections, crisp realistic device, soft white daylight. Elegant commercial product photography, navy and blue palette with green accent. No text, charts or graphic cards outside screen, no webpage layout surrounding photo, no watermark.",
+      "generated": true,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "webp_bytes": 131778,
+      "file": "public/images/seo-hero.webp"
+    },
+    {
+      "name": "graphic-hero",
+      "prompt": "Use case: product-mockup. Asset type: landscape 3:2 graphic design services website hero photograph. Premium desktop monitor on white desk in a bright creative studio, showing a colorful portrait digital graphic composition of a woman using vivid teal, amber, magenta and cobalt painterly shapes. Screen left area has short bold stacked type exactly 'Good Design Builds Brands'; a discreet creative software toolbar and small color palette. Drawing tablet with stylus, slim white keyboard, small green plant and pencil cup in foreground. Monitor dominates central/right frame. Premium photorealistic hardware and studio photography, pale blue/white backdrop with artistic color on screen. No text or graphic cards outside monitor, no surrounding webpage layout, no watermark.",
+      "generated": true,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "webp_bytes": 197260,
+      "file": "public/images/graphic-hero.webp"
+    },
+    {
+      "name": "poster-hero",
+      "prompt": "Use case: product-mockup. Asset type: landscape 3:2 poster design service website hero. Three high quality physical portrait print poster boards leaning at dynamic yet plausible angles, isolated in a bright pale blue studio, soft shadows. Center and largest: rich dark charcoal and amber burger promotional poster with appetizing photorealistic burger and exact bold typography 'GOOD FOOD GOOD MOOD', smaller amber special offer. Back left: beautiful blue mountain travel poster featuring a backpacker and exact headline 'EXPLORE THE WORLD'. Right: dramatic black and red fitness poster featuring a strong Indian female athlete in black workout clothing and exact headline 'STRONGER THAN YESTERDAY'. Full boards visible, overlapping cleanly, professional print finish, sharp design. No unrelated text, no website navigation, no webpage layout, no watermark.",
+      "generated": true,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "webp_bytes": 243210,
+      "file": "public/images/poster-hero.webp"
+    },
+    {
+      "name": "brand-kit",
+      "prompt": "Use case: product-mockup. Asset type: landscape 3:2 brand design website image. Premium navy, ivory and amber brand stationery arranged on a navy tabletop in a softly lit creative studio: an upright navy brand booklet with restrained gold abstract emblem and exact title 'BRAND', a white and navy brand guideline booklet with exact title 'BRAND GUIDELINES', angular amber design accent, envelope, stacked business cards, slim black pen, navy ceramic mug with small white 'B.' mark, and fresh green plant. Layered tactile paper textures, subtle gold foil detail, sophisticated elegant layout, photorealistic product photography, coherent navy blue, ivory and amber. No website navigation or overlays, no watermark.",
+      "generated": true,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "webp_bytes": 187800,
+      "file": "public/images/brand-kit.webp"
+    },
+    {
+      "name": "portfolio-hero",
+      "prompt": "Use case: product-mockup. Asset type: landscape 3:2 digital agency portfolio website hero. Three overlapping angled floating website browser mockups in a bright pale blue clean studio with soft realistic shadows. Front left mockup: premium dark navy technology company website with photo of professional team and brief exact headline 'Modern Digital Experience'. Back center mockup: refined white business analytics application with clear small charts and dashboard components. Front right mockup: green travel website featuring dramatic mountain and valley photography with brief exact headline 'Explore New Horizons'. All three are distinct thin browser cards with rounded corners and convincing three-dimensional perspective, generous real depth and crisp clean surfaces. Mockups fill central area. No text outside mockups, no enclosing full web page, no screenshot page navigation outside the three cards, no watermark.",
+      "generated": true,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "webp_bytes": 148466,
+      "file": "public/images/portfolio-hero.webp"
+    },
+    {
+      "name": "project-sheet",
+      "prompt": "Use case: product-mockup. Asset type: EXACT 3-column by 2-row six-image contact sheet for portfolio imagery. Overall aspect ratio 9:4; every cell is an equal landscape 3:2 rectangle. Absolutely NO gaps, gutters, margins, border lines, frames around cells, labels or numbers. All six rectangles touch edge to edge. Divisions must be exactly one-third and two-thirds of width and exactly halfway down height. Six fully independent premium photorealistic compositions, no objects cross between cells: TOP LEFT a modern desktop monitor showing a white and pale blue business management dashboard with graphs on a bright office desk; TOP MIDDLE two premium smartphone mockups showing an elegant white footwear ecommerce shopping app with tan shoes and a small plant; TOP RIGHT full-frame dark navy SaaS analytics dashboard with refined blue and amber charts; BOTTOM LEFT polished travel website browser view of a stunning Mediterranean coastline and cliffside village, small clean title 'Discover New Places'; BOTTOM MIDDLE polished luxury real-estate website browser view of a modern villa at dusk, brief headline 'Find Your Dream Home'; BOTTOM RIGHT premium gold abstract A monogram and 'AURORA' on dark charcoal textured brand stationery. Each composition fills its own cell, no padding. Commercial portfolio imagery, crisp and polished. Do not generate an enclosing website or cards containing descriptions; this must be six photo/artwork cells only. No watermark.",
+      "generated": true,
+      "sheet": {
+        "columns": 3,
+        "rows": 2,
+        "cssBackgroundSize": "300% 200%",
+        "cells": [
+          "Business Management Portal",
+          "E-Commerce Mobile App",
+          "SaaS Analytics Dashboard",
+          "Travel & Tourism Campaign",
+          "Real Estate Platform",
+          "Brand Identity & Design"
+        ]
+      },
+      "dimensions": [
+        1881,
+        836
+      ],
+      "webp_bytes": 232480,
+      "file": "public/images/project-sheet.webp"
+    },
+    {
+      "name": "industries-sheet",
+      "prompt": "Use case: photorealistic-natural. Asset type: EXACT FIVE equal vertical photo panels edge-to-edge in one single horizontal strip. Overall aspect ratio 10:3. Every individual panel is portrait 2:3. No gaps, gutters, margins, borders, labels, text, numbers, graphics or overlapping elements. Exact vertical divisions at 20%, 40%, 60%, 80% of canvas width; each scene fills its panel completely. FIVE INDEPENDENT realistic professional photographs, ordered left to right: 1 an Indian male doctor in white coat and blue shirt with stethoscope, in a clean hospital; 2 upscale retail boutique with warm wood, stylish clothing racks and amber lights; 3 young Indian woman student with books seated in a bright modern library; 4 dramatic skyline of modern residential glass towers and urban architecture under blue sky; 5 passenger airplane on airport tarmac at golden sunrise. Photorealistic photography, premium cohesive cool blue palette with warm accents, all primary subjects safely inside their own panel. No watermark.",
+      "generated": true,
+      "sheet": {
+        "columns": 5,
+        "rows": 1,
+        "cssBackgroundSize": "500% 100%",
+        "cells": [
+          "Healthcare",
+          "Retail & E-commerce",
+          "Education",
+          "Real Estate",
+          "Travel & Hospitality"
+        ],
+        "framing_note": "Five equal edge-to-edge panels preserved as generated. Source is approximately 3:1 overall; frame each panel in requested portrait 2:3 slot with CSS background-size 500% 100%."
+      },
+      "dimensions": [
+        2160,
+        728
+      ],
+      "webp_bytes": 278562,
+      "file": "public/images/industries-sheet.webp"
+    },
+    {
+      "name": "posters-sheet",
+      "prompt": "Use case: ads-marketing. Asset type: EXACT FIVE equal portrait poster artworks edge-to-edge in one horizontal strip. Overall aspect ratio 10:3, each of five panels portrait 2:3. Exact vertical divisions at 20%, 40%, 60%, 80% of canvas width. Absolutely no gaps, gutters, white margins, frames, borders, labels, numbers, studio backdrop or perspective; these are flat full-bleed poster designs that fill each rectangle completely. From left to right: 1 rich dark coffee advertising poster with warm steaming cup of coffee and coffee beans, amber and white bold typography exactly 'GOOD IDEAS START WITH GREAT COFFEE'; 2 vivid red retail sale poster with bold white exact headline 'MEGA SALE', smaller exact line 'UP TO 50% OFF', energetic 3D red shapes; 3 beautiful tropical turquoise travel beach poster with limestone island and female traveler, bold exact headline 'TRAVEL MORE'; 4 dramatic black fitness poster with a strong male athlete, white and red exact headline 'DISCIPLINE TODAY RESULTS TOMORROW'; 5 green environmental awareness poster with hands gently holding a green-and-blue globe, exact green headline 'SAVE OUR PLANET'. Each poster a distinct polished professional design with its own photorealistic imagery, large legible headline and strong hierarchy, no overlaps between panels. No watermark.",
+      "generated": true,
+      "sheet": {
+        "columns": 5,
+        "rows": 1,
+        "cssBackgroundSize": "500% 100%",
+        "cells": [
+          "Coffee",
+          "Sale",
+          "Travel",
+          "Fitness",
+          "Environment"
+        ],
+        "framing_note": "Five equal edge-to-edge panels preserved as generated. Source is approximately 3:1 overall; frame each panel in requested portrait 2:3 slot with CSS background-size 500% 100%."
+      },
+      "dimensions": [
+        2172,
+        724
+      ],
+      "webp_bytes": 321812,
+      "file": "public/images/posters-sheet.webp"
+    },
+    {
+      "name": "creative-banner",
+      "prompt": "Use case: ads-marketing. Asset type: ultrawide 21:9 website call-to-action banner background. One luminous glass idea lightbulb on the right 25% of frame, centered vertically, bright glowing amber filament, vivid fluid paint splashes in electric blue, cyan, magenta, orange and yellow bursting organically around the bulb but staying mostly in the right half. Metallic screw base visible, glass reflections, polished premium high-end photorealistic 3D render. Left 65% of canvas is deep dark navy blue clean negative space suitable for HTML text. Sophisticated expressive creative-agency mood, crisp bulb silhouette, dark navy #082545 background with smooth subtle blue gradient. No text, no logos, no icons, no webpage layout, no watermark.",
+      "generated": true,
+      "dimensions": [
+        1916,
+        821
+      ],
+      "webp_bytes": 158168,
+      "file": "public/images/creative-banner.webp"
+    },
+    {
+      "name": "avatars-sheet",
+      "prompt": "Use case: photorealistic-natural. Asset type: EXACT three equal square professional headshot photo cells side-by-side, overall aspect ratio 3:1. Three distinct fictitious Indian professionals for illustrative website testimonial avatars. All three cells equal size; exact divisions at one-third and two-thirds canvas width, no gaps, no margins, no lines, no frames, no text. Neutral pale blue-grey softly blurred office background in each cell. Each person centered in their own square, head and shoulders visible, friendly natural smile, direct gaze at camera, modest professional navy business clothing. Left cell: Indian man early thirties with rectangular glasses, neat dark hair and short beard, navy blazer and pale blue shirt. Middle cell: Indian woman early thirties with shoulder-length dark hair, navy blazer and ivory blouse. Right cell: Indian man mid thirties with short hair and a neatly trimmed beard, navy jacket and white shirt, no glasses. Realistic premium editorial headshot photography, natural skin texture and even flattering daylight. Subjects must remain completely inside their own cell. No logos, no watermark.",
+      "generated": true,
+      "sheet": {
+        "columns": 3,
+        "rows": 1,
+        "cssBackgroundSize": "300% 100%",
+        "cells": [
+          "Illustrative man with glasses",
+          "Illustrative woman",
+          "Illustrative bearded man"
+        ],
+        "note": "AI-generated fictional portraits for illustrative testimonial avatars; not verified likenesses of the named personas."
+      },
+      "dimensions": [
+        2172,
+        724
+      ],
+      "webp_bytes": 125840,
+      "file": "public/images/avatars-sheet.webp"
+    }
+  ]
+}
