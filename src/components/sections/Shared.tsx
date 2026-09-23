@@ -1,9 +1,13 @@
+'use client';
+
 import { Icon } from '@/components/ui/Icon';
 import { Visual } from '@/components/ui/Visual';
 import { Button } from '@/components/ui/Button';
 import { processSteps, site } from '@/data/site';
 import { ContactForm } from '@/components/forms/ContactForm';
 import type { Fact } from '@/types';
+import { ScrollReveal, StaggerContainer, StaggerItem } from '@/components/ui/ScrollReveal';
+
 export function SectionHeading({
   eyebrow,
   title,
@@ -18,41 +22,48 @@ export function SectionHeading({
   children?: React.ReactNode;
 }) {
   return (
-    <div className={'section-heading ' + align}>
+    <ScrollReveal variant="fade-up" className={'section-heading ' + align}>
       {eyebrow && <p className="eyebrow">{eyebrow}</p>}
       <h2>{title}</h2>
       {text && <p>{text}</p>}
       {children}
-    </div>
+    </ScrollReveal>
   );
 }
+
 export function Facts({ items, className = '' }: { items: Fact[]; className?: string }) {
   return (
-    <div className={'facts ' + className}>
+    <StaggerContainer className={'facts ' + className} staggerDelay={0.1}>
       {items.map((f, i) => (
-        <div className="fact" key={i}>
-          <Icon name={f.icon} size={30} />
-          <div>
-            <strong>{f.title}</strong>
-            {f.description && <span>{f.description}</span>}
+        <StaggerItem key={i} variant="fade-up">
+          <div className="fact">
+            <Icon name={f.icon} size={30} />
+            <div>
+              <strong>{f.title}</strong>
+              {f.description && <span>{f.description}</span>}
+            </div>
           </div>
-        </div>
+        </StaggerItem>
       ))}
-    </div>
+    </StaggerContainer>
   );
 }
+
 export function Stats({ items, className = '' }: { items: string[][]; className?: string }) {
   return (
-    <div className={'stats ' + className}>
+    <StaggerContainer className={'stats ' + className} staggerDelay={0.12}>
       {items.map(([value, label]) => (
-        <div key={label}>
-          <strong>{value}</strong>
-          <span>{label}</span>
-        </div>
+        <StaggerItem key={label} variant="zoom-in">
+          <div>
+            <strong>{value}</strong>
+            <span>{label}</span>
+          </div>
+        </StaggerItem>
       ))}
-    </div>
+    </StaggerContainer>
   );
 }
+
 export function Process({
   title = 'Simple Process.\nPowerful Results.',
   labels,
@@ -75,7 +86,7 @@ export function Process({
       }
     >
       <div className="container process-layout">
-        <div className="process-intro">
+        <ScrollReveal variant="fade-right" className="process-intro">
           <p className="eyebrow">OUR PROCESS</p>
           <h2>{title}</h2>
           {!compact && (
@@ -85,23 +96,25 @@ export function Process({
               Exceptional results at every step.
             </p>
           )}
-        </div>
-        <ol className="process-steps">
+        </ScrollReveal>
+
+        <StaggerContainer className="process-steps" staggerDelay={0.15} as="ol">
           {steps.map((label, index) => (
-            <li key={label}>
+            <StaggerItem key={label} variant="fade-up" as="li">
               <div className="process-icon">
                 <Icon name={processSteps[Math.min(index, 4)].icon} size={30} />
                 <span>{String(index + 1).padStart(2, '0')}</span>
               </div>
               <h3>{label}</h3>
               <p>{processSteps[Math.min(index, 4)].description}</p>
-            </li>
+            </StaggerItem>
           ))}
-        </ol>
+        </StaggerContainer>
       </div>
     </section>
   );
 }
+
 export function CTA({
   title = 'Let’s Build Something\nGreat Together',
   text = 'Have an idea? We have the expertise to make it happen.',
@@ -123,62 +136,79 @@ export function CTA({
     <section className={'cta-section dark-section ' + className}>
       <Visual asset={image} alt="" sizes="100vw" className="cta-background" />
       <div className="container cta-inner">
-        <div>
-          <h2>{title}</h2>
-          <p>{text}</p>
-          <Button href={href} variant="white">
-            {label}
-          </Button>
-        </div>
-        <p className="script">{script}</p>
+        <ScrollReveal variant="scale-up" delay={0.1}>
+          <div>
+            <h2>{title}</h2>
+            <p>{text}</p>
+            <Button href={href} variant="white">
+              {label}
+            </Button>
+          </div>
+        </ScrollReveal>
+        
+        <ScrollReveal variant="zoom-in" delay={0.25}>
+          <p className="script">{script}</p>
+        </ScrollReveal>
       </div>
     </section>
   );
 }
+
 export function ContactSection() {
   return (
     <section className="contact-section pale-section">
       <div className="container contact-section-grid">
-        <div>
-          <p className="eyebrow">LET’S CONNECT</p>
-          <h2>
-            Ready to Build
-            <br />
-            What’s Next
-            <br />
-            Together?
-          </h2>
-          <p>
-            Tell us about your idea. Our team is ready to turn your vision into a powerful digital
-            experience.
-          </p>
-          <div className="contact-lines">
-            <a href={'mailto:' + site.email}>
-              <Icon name="Mail" />
-              <span>
-                <small>Email Us</small>
-                {site.email}
-              </span>
-            </a>
-            <a href={'tel:' + site.phoneHref}>
-              <Icon name="Phone" />
-              <span>
-                <small>Call Us</small>
-                {site.phone}
-              </span>
-            </a>
-            <div>
-              <Icon name="MapPin" />
-              <span>
-                <small>Visit Us</small>
-                {site.address}
-                <br />
-                {site.city}
-              </span>
-            </div>
+        <ScrollReveal variant="fade-right">
+          <div>
+            <p className="eyebrow">LET’S CONNECT</p>
+            <h2>
+              Ready to Build
+              <br />
+              What’s Next
+              <br />
+              Together?
+            </h2>
+            <p>
+              Tell us about your idea. Our team is ready to turn your vision into a powerful digital
+              experience.
+            </p>
+            <StaggerContainer className="contact-lines" staggerDelay={0.1}>
+              <StaggerItem variant="fade-up">
+                <a href={'mailto:' + site.email}>
+                  <Icon name="Mail" />
+                  <span>
+                    <small>Email Us</small>
+                    {site.email}
+                  </span>
+                </a>
+              </StaggerItem>
+              <StaggerItem variant="fade-up">
+                <a href={'tel:' + site.phoneHref}>
+                  <Icon name="Phone" />
+                  <span>
+                    <small>Call Us</small>
+                    {site.phone}
+                  </span>
+                </a>
+              </StaggerItem>
+              <StaggerItem variant="fade-up">
+                <div>
+                  <Icon name="MapPin" />
+                  <span>
+                    <small>Visit Us</small>
+                    {site.address}
+                    <br />
+                    {site.city}
+                  </span>
+                </div>
+              </StaggerItem>
+            </StaggerContainer>
           </div>
-        </div>
-        <ContactForm compact />
+        </ScrollReveal>
+
+        <ScrollReveal variant="fade-left" delay={0.15}>
+          <ContactForm compact />
+        </ScrollReveal>
       </div>
     </section>
   );

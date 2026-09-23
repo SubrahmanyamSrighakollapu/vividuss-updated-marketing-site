@@ -9,18 +9,24 @@ import { Facts, Process, CTA } from '@/components/sections/Shared';
 import { Industries } from '@/components/sections/Industries';
 import { ProjectShowcase } from '@/components/portfolio/Projects';
 import { Testimonials } from '@/components/sections/Testimonials';
+import { ScrollReveal, StaggerContainer, StaggerItem } from '@/components/ui/ScrollReveal';
+
 export const metadata = pageMetadata(
   'Ideas Today. Greater Tomorrows.',
   'Vividuss brings web and mobile development, design and digital marketing together to help your business grow.',
 );
+
 export default function Home() {
   return (
     <>
       <HomeHero />
+
       <section className="trust-strip">
         <div className="container">
-          <p>Trusted by brands that believe in better</p>
-          <div>
+          <ScrollReveal variant="fade-down">
+            <p>Trusted by brands that believe in better</p>
+          </ScrollReveal>
+          <StaggerContainer staggerDelay={0.08} className="trust-logos">
             {[
               ['Gem', 'PALMCO'],
               ['Layers', 'NextGen'],
@@ -29,17 +35,18 @@ export default function Home() {
               ['Globe', 'GlobalTech'],
               ['TrendingUp', 'Fastline'],
             ].map(([icon, name]) => (
-              <span key={name}>
+              <StaggerItem key={name} variant="scale-up" as="span">
                 <Icon name={icon} size={29} />
                 {name}
-              </span>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
+
       <section className="section home-about">
         <div className="container split-grid">
-          <div className="home-about-art">
+          <ScrollReveal variant="fade-right" className="home-about-art">
             <Visual
               asset="/images/team.webp"
               alt="Vividuss creative team collaborating in a bright office"
@@ -61,8 +68,9 @@ export default function Home() {
                 Driven by Results.
               </strong>
             </div>
-          </div>
-          <div>
+          </ScrollReveal>
+
+          <ScrollReveal variant="fade-left" delay={0.15}>
             <p className="eyebrow">ABOUT VIVIDUSS</p>
             <h2>
               Your Trusted Partner
@@ -107,9 +115,10 @@ export default function Home() {
                 Business.
               </p>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
+
       <ServicesStrip />
       <Industries />
       <ProjectShowcase />

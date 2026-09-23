@@ -6,17 +6,20 @@ import { Button } from '@/components/ui/Button';
 import { ContactForm } from '@/components/forms/ContactForm';
 import { SocialLinks } from '@/components/layout/SocialLinks';
 import { Facts } from '@/components/sections/Shared';
+import { ScrollReveal, StaggerContainer, StaggerItem } from '@/components/ui/ScrollReveal';
+
 export const metadata = pageMetadata(
   'Contact Us',
   'Have a project in mind? Talk to the Vividuss team about web development, mobile apps, marketing, design or franchise opportunities.',
   '/contact/',
 );
+
 export default function Contact() {
   return (
     <>
       <section className="contact-hero pale-section">
         <div className="container split-grid">
-          <div>
+          <ScrollReveal variant="fade-right">
             <p className="eyebrow">LET’S CONNECT</p>
             <h1>
               Let’s Turn Your Ideas
@@ -36,8 +39,9 @@ export default function Contact() {
                 { icon: 'Handshake', title: 'Build Together', description: 'Great Things Ahead' },
               ]}
             />
-          </div>
-          <div className="contact-hero-art">
+          </ScrollReveal>
+
+          <ScrollReveal variant="fade-left" delay={0.15} className="contact-hero-art">
             <Visual
               asset="/images/contact.webp"
               alt="Friendly customer support specialist in a bright office"
@@ -60,12 +64,13 @@ export default function Contact() {
               <br />
               Start Here
             </p>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
+
       <section className="section contact-main" id="contact-form">
         <div className="container contact-main-grid">
-          <div>
+          <ScrollReveal variant="fade-right">
             <p className="eyebrow">GET IN TOUCH</p>
             <h2>
               We’d Love to Hear
@@ -77,69 +82,82 @@ export default function Contact() {
               <br />
               Our team will be happy to assist you.
             </p>
-            <div className="contact-cards">
-              <a
-                href={
-                  'https://www.google.com/maps/search/?api=1&query=' +
-                  encodeURIComponent(site.mapQuery)
-                }
-                target="_blank"
-                rel="noreferrer"
-              >
-                <span className="feature-icon">
-                  <Icon name="MapPin" />
-                </span>
-                <span>
-                  <strong>Visit Our Office</strong>
-                  <span>
-                    {site.address}
-                    <br />
-                    {site.city}
+            <StaggerContainer className="contact-cards" staggerDelay={0.1}>
+              <StaggerItem variant="fade-up">
+                <a
+                  href={
+                    'https://www.google.com/maps/search/?api=1&query=' +
+                    encodeURIComponent(site.mapQuery)
+                  }
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <span className="feature-icon">
+                    <Icon name="MapPin" />
                   </span>
-                </span>
-                <Icon name="ArrowUpRight" size={18} />
-              </a>
-              <a href={'tel:' + site.phoneHref}>
-                <span className="feature-icon">
-                  <Icon name="Phone" />
-                </span>
-                <span>
-                  <strong>Give Us a Call</strong>
                   <span>
-                    {site.phone}
-                    <br />
-                    Monday – Saturday, 9:00 AM – 6:00 PM
+                    <strong>Visit Our Office</strong>
+                    <span>
+                      {site.address}
+                      <br />
+                      {site.city}
+                    </span>
                   </span>
-                </span>
-                <Icon name="ArrowUpRight" size={18} />
-              </a>
-              <a href={'mailto:' + site.email}>
-                <span className="feature-icon">
-                  <Icon name="Mail" />
-                </span>
-                <span>
-                  <strong>Drop Us an Email</strong>
+                  <Icon name="ArrowUpRight" size={18} />
+                </a>
+              </StaggerItem>
+
+              <StaggerItem variant="fade-up">
+                <a href={'tel:' + site.phoneHref}>
+                  <span className="feature-icon">
+                    <Icon name="Phone" />
+                  </span>
                   <span>
-                    {site.email}
-                    <br />
-                    We’d love to hear about your project.
+                    <strong>Give Us a Call</strong>
+                    <span>
+                      {site.phone}
+                      <br />
+                      Monday – Saturday, 9:00 AM – 6:00 PM
+                    </span>
                   </span>
-                </span>
-                <Icon name="ArrowUpRight" size={18} />
-              </a>
-            </div>
+                  <Icon name="ArrowUpRight" size={18} />
+                </a>
+              </StaggerItem>
+
+              <StaggerItem variant="fade-up">
+                <a href={'mailto:' + site.email}>
+                  <span className="feature-icon">
+                    <Icon name="Mail" />
+                  </span>
+                  <span>
+                    <strong>Drop Us an Email</strong>
+                    <span>
+                      {site.email}
+                      <br />
+                      We’d love to hear about your project.
+                    </span>
+                  </span>
+                  <Icon name="ArrowUpRight" size={18} />
+                </a>
+              </StaggerItem>
+            </StaggerContainer>
+
             <p className="social-heading">Follow Our Journey</p>
             <SocialLinks />
             <div className="contact-decoration" aria-hidden="true">
               <Icon name="Globe" size={170} />
               <Icon name="MapPin" size={37} />
             </div>
-          </div>
-          <ContactForm />
+          </ScrollReveal>
+
+          <ScrollReveal variant="fade-left" delay={0.15}>
+            <ContactForm />
+          </ScrollReveal>
         </div>
       </section>
+
       <section className="location-section">
-        <div className="location-copy dark-section">
+        <ScrollReveal variant="fade-right" className="location-copy dark-section">
           <div>
             <p className="eyebrow">FIND US HERE</p>
             <h2>Visit Our Office</h2>
@@ -164,7 +182,7 @@ export default function Contact() {
               Get Directions
             </Button>
           </div>
-        </div>
+        </ScrollReveal>
         <iframe
           title="Map of the Madhapur area in Hyderabad"
           src={
@@ -177,8 +195,9 @@ export default function Contact() {
           allowFullScreen
         />
       </section>
+
       <section className="section conversation-cta pale-section">
-        <div className="container">
+        <ScrollReveal variant="scale-up" className="container">
           <div>
             <p className="eyebrow">LET’S CREATE SOMETHING GREAT</p>
             <h2>Have a Project in Mind?</h2>
@@ -195,7 +214,7 @@ export default function Contact() {
             <br />
             to Something Great.
           </p>
-        </div>
+        </ScrollReveal>
       </section>
     </>
   );

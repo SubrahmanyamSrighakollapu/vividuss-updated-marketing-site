@@ -5,11 +5,14 @@ import { Button } from '@/components/ui/Button';
 import { StoryButton } from '@/components/sections/StoryButton';
 import { Stats, SectionHeading, CTA } from '@/components/sections/Shared';
 import { Testimonials } from '@/components/sections/Testimonials';
+import { ScrollReveal, StaggerContainer, StaggerItem } from '@/components/ui/ScrollReveal';
+
 export const metadata = pageMetadata(
   'Franchise Opportunities',
   'Explore the Vividuss franchise opportunity and build a technology business with operational and marketing support.',
   '/franchise/',
 );
+
 const benefits = [
   [
     'Code2',
@@ -22,6 +25,7 @@ const benefits = [
   ['Megaphone', 'Marketing & Lead Support', 'Tools and support to connect with customers.'],
   ['BadgeCheck', 'Trusted Brand Advantage', 'Build with the confidence of an established brand.'],
 ];
+
 const reasons = [
   ['Low Investment', 'An accessible opportunity to begin your entrepreneurial journey.'],
   ['No Technical Expertise', 'Our delivery team brings the technical knowledge.'],
@@ -32,12 +36,13 @@ const reasons = [
   ['Ongoing Assistance', 'A team you can turn to as your business grows.'],
   ['Scalable Opportunity', 'Expand your services and customer relationships.'],
 ];
+
 export default function Franchise() {
   return (
     <>
       <section className="franchise-hero pale-section">
         <div className="container split-grid">
-          <div>
+          <ScrollReveal variant="fade-right">
             <p className="eyebrow">GROW WITH VIVIDUSS</p>
             <h1>
               Own a Profitable
@@ -61,8 +66,9 @@ export default function Franchise() {
                 ['Proven', 'Business Model'],
               ]}
             />
-          </div>
-          <div className="franchise-hero-art">
+          </ScrollReveal>
+
+          <ScrollReveal variant="fade-left" delay={0.15} className="franchise-hero-art">
             <Visual
               asset="/images/franchise.webp"
               alt="Vividuss franchise storefront concept"
@@ -81,12 +87,13 @@ export default function Franchise() {
                 <strong>A Stronger Future.</strong>
               </span>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
+
       <section className="section franchise-benefits" id="opportunity">
         <div className="container benefits-layout">
-          <div>
+          <ScrollReveal variant="fade-right">
             <p className="eyebrow">WHY FRANCHISE WITH US</p>
             <h2>
               Your Business.
@@ -107,44 +114,47 @@ export default function Franchise() {
             >
               Download Brochure
             </Button>
-          </div>
-          <div className="benefits-grid">
+          </ScrollReveal>
+
+          <StaggerContainer className="benefits-grid" staggerDelay={0.1}>
             {benefits.map(([icon, title, text]) => (
-              <article key={title}>
+              <StaggerItem key={title} variant="fade-up" as="article">
                 <Icon name={icon} size={31} />
                 <h3>{title}</h3>
                 <p>{text}</p>
-              </article>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
+
       <section className="section franchise-journey pale-section">
         <div className="container">
           <SectionHeading
             eyebrow="YOUR JOURNEY STARTS HERE"
             title="Start Your Vividuss Franchise in 4 Simple Steps"
           />
-          <ol>
+          <StaggerContainer className="journey-steps" staggerDelay={0.12} as="ol">
             {[
               ['FileText', 'Apply', 'Share your details and interest.'],
               ['MessagesSquare', 'Discussion', 'Let’s explore the opportunity together.'],
               ['Handshake', 'Onboarding', 'Get trained, equipped and ready.'],
               ['Rocket', 'Launch & Grow', 'Start your business with our support.'],
             ].map(([icon, title, text], i) => (
-              <li key={title}>
+              <StaggerItem key={title} variant="fade-up" as="li">
                 <span className="step-number">0{i + 1}</span>
                 <Icon name={icon} size={36} />
                 <h3>{title}</h3>
                 <p>{text}</p>
-              </li>
+              </StaggerItem>
             ))}
-          </ol>
+          </StaggerContainer>
         </div>
       </section>
+
       <section className="section franchise-growth">
         <div className="container split-grid">
-          <div>
+          <ScrollReveal variant="fade-right">
             <p className="eyebrow">BUILT FOR ENTREPRENEURS</p>
             <h2>
               Be Your Own Boss.
@@ -165,8 +175,9 @@ export default function Franchise() {
               <br />
               Together.
             </p>
-          </div>
-          <div className="founder-art">
+          </ScrollReveal>
+
+          <ScrollReveal variant="fade-left" delay={0.15} className="founder-art">
             <Visual
               asset="/images/founder.webp"
               alt="Entrepreneur building a business at his laptop"
@@ -183,9 +194,10 @@ export default function Franchise() {
               <Icon name="ChartColumn" />
               <span>High-Demand Services</span>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
+
       <section className="results-bar">
         <div className="container">
           <Stats
@@ -198,6 +210,7 @@ export default function Franchise() {
           />
         </div>
       </section>
+
       <section className="section franchise-reasons">
         <div className="container">
           <SectionHeading
@@ -205,18 +218,20 @@ export default function Franchise() {
             title="8 Reasons to Partner with Vividuss"
             text="A powerful opportunity. A partnership built to last."
           />
-          <div className="reason-grid">
+          <StaggerContainer className="reason-grid" staggerDelay={0.08}>
             {reasons.map(([title, text], i) => (
-              <article key={title}>
+              <StaggerItem key={title} variant="scale-up" as="article">
                 <span>0{i + 1}</span>
                 <h3>{title}</h3>
                 <p>{text}</p>
-              </article>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
+
       <Testimonials title="What Our Franchise Partners Say" franchise />
+
       <CTA
         href="/contact/?service=franchise"
         title={'Be Part of\nSomething Bigger'}

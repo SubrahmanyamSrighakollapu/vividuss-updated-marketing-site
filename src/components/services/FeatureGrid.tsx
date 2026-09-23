@@ -1,10 +1,13 @@
 'use client';
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 import type { Feature } from '@/types';
 import { Icon } from '@/components/ui/Icon';
 import { Modal } from '@/components/ui/Modal';
 import { Button } from '@/components/ui/Button';
 import { SectionHeading } from '@/components/sections/Shared';
+import { StaggerContainer, StaggerItem } from '@/components/ui/ScrollReveal';
+
 export function FeatureGrid({
   features,
   title,
@@ -15,6 +18,7 @@ export function FeatureGrid({
   slug: string;
 }) {
   const [selected, setSelected] = useState<Feature | null>(null);
+
   return (
     <section className="section features-section pale-section" id="solutions">
       <div className="container">
@@ -23,21 +27,32 @@ export function FeatureGrid({
           title={title}
           text="Thoughtfully crafted solutions. Built around your business."
         />
-        <div className={'feature-grid ' + (features.length === 8 ? 'four-columns' : '')}>
+
+        <StaggerContainer
+          className={'feature-grid ' + (features.length === 8 ? 'four-columns' : '')}
+          staggerDelay={0.08}
+        >
           {features.map((f, i) => (
-            <article className="feature-card" key={f.title}>
-              <span className={'feature-icon tone-' + (i % 4)}>
-                <Icon name={f.icon} size={30} />
-              </span>
-              <h3>{f.title}</h3>
-              <p>{f.description}</p>
-              <button className="text-link" onClick={() => setSelected(f)}>
-                Learn More <Icon name="ArrowUpRight" size={15} />
-              </button>
-            </article>
+            <StaggerItem key={f.title} variant="fade-up">
+              <motion.article
+                className="feature-card"
+                whileHover={{ y: -6, transition: { duration: 0.2 } }}
+                style={{ height: '100%' }}
+              >
+                <span className={'feature-icon tone-' + (i % 4)}>
+                  <Icon name={f.icon} size={30} />
+                </span>
+                <h3>{f.title}</h3>
+                <p>{f.description}</p>
+                <button className="text-link" onClick={() => setSelected(f)}>
+                  Learn More <Icon name="ArrowUpRight" size={15} />
+                </button>
+              </motion.article>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </div>
+
       <Modal
         open={!!selected}
         onClose={() => setSelected(null)}

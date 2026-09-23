@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import { Logo } from '@/components/ui/Logo';
 import { Icon } from '@/components/ui/Icon';
@@ -5,11 +7,13 @@ import { Newsletter } from '@/components/forms/Newsletter';
 import { SocialLinks } from './SocialLinks';
 import { navLinks, site } from '@/data/site';
 import { services } from '@/data/services';
+import { ScrollReveal, StaggerContainer, StaggerItem } from '@/components/ui/ScrollReveal';
+
 export function Footer() {
   return (
     <footer className="footer">
-      <div className="container footer-grid">
-        <div className="footer-brand">
+      <StaggerContainer className="container footer-grid" staggerDelay={0.1}>
+        <StaggerItem variant="fade-up" className="footer-brand">
           <Logo light />
           <p>
             Innovative digital solutions to help
@@ -19,8 +23,9 @@ export function Footer() {
             and stay ahead.
           </p>
           <SocialLinks />
-        </div>
-        <div>
+        </StaggerItem>
+
+        <StaggerItem variant="fade-up">
           <h3>Quick Links</h3>
           <ul>
             {navLinks
@@ -31,8 +36,9 @@ export function Footer() {
                 </li>
               ))}
           </ul>
-        </div>
-        <div>
+        </StaggerItem>
+
+        <StaggerItem variant="fade-up">
           <h3>Services</h3>
           <ul>
             {services.map((s) => (
@@ -41,8 +47,9 @@ export function Footer() {
               </li>
             ))}
           </ul>
-        </div>
-        <div>
+        </StaggerItem>
+
+        <StaggerItem variant="fade-up">
           <h3>Resources</h3>
           <ul>
             <li>
@@ -59,9 +66,10 @@ export function Footer() {
             </li>
           </ul>
           <Newsletter />
-        </div>
-      </div>
-      <div className="container footer-bottom">
+        </StaggerItem>
+      </StaggerContainer>
+
+      <ScrollReveal variant="fade-up" delay={0.25} className="container footer-bottom">
         <p>
           © {new Date().getFullYear()} {site.name}. All rights reserved.
         </p>
@@ -69,7 +77,7 @@ export function Footer() {
         <a href="#top" className="back-top" aria-label="Back to top">
           <Icon name="ArrowUp" size={18} />
         </a>
-      </div>
+      </ScrollReveal>
     </footer>
   );
 }

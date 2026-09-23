@@ -1,3 +1,5 @@
+'use client';
+
 import { services } from '@/data/services';
 import type { Service } from '@/types';
 import { Visual } from '@/components/ui/Visual';
@@ -7,6 +9,8 @@ import { Facts, Stats, Process, SectionHeading, CTA } from '@/components/section
 import { FeatureGrid } from './FeatureGrid';
 import { ProjectShowcase } from '@/components/portfolio/Projects';
 import { Testimonials } from '@/components/sections/Testimonials';
+import { ScrollReveal, StaggerContainer, StaggerItem } from '@/components/ui/ScrollReveal';
+
 const technologyFiles: Record<string, string> = {
   HTML: 'html5',
   CSS: 'css',
@@ -25,13 +29,14 @@ const technologyFiles: Record<string, string> = {
   'Android Studio': 'androidstudio',
   MongoDB: 'mongodb',
 };
+
 export function ServicePage({ service: s }: { service: Service }) {
   const isWhatsApp = s.slug === 'whatsapp-crm';
   return (
     <div className={'service-page service-' + s.slug + ' accent-' + s.accent}>
       <section className="service-hero pale-section">
         <div className="container service-hero-grid">
-          <div className="service-hero-copy">
+          <ScrollReveal variant="fade-right" className="service-hero-copy">
             <p className="eyebrow">{s.name.toUpperCase()}</p>
             <h1>
               {s.headline.map((line, i) => (
@@ -48,8 +53,9 @@ export function ServicePage({ service: s }: { service: Service }) {
               </Button>
             </div>
             <Facts items={s.heroFacts} className="hero-facts" />
-          </div>
-          <div className="service-hero-art">
+          </ScrollReveal>
+
+          <ScrollReveal variant="fade-left" delay={0.15} className="service-hero-art">
             <Visual asset={s.image} alt={s.name + ' creative showcase'} priority />
             <p className="script hero-art-script">{s.script}</p>
             {s.heroBadge && (
@@ -71,27 +77,30 @@ export function ServicePage({ service: s }: { service: Service }) {
                 ))}
               </div>
             )}
-          </div>
+          </ScrollReveal>
         </div>
       </section>
+
       <section className="section service-intro">
         <div className="container split-grid">
-          <div className="service-intro-art">
+          <ScrollReveal variant="fade-right" className="service-intro-art">
             <Visual asset={s.introImage} alt={s.name + ' design and production'} />
             <div className="experience-badge">
               <strong>{s.introBadge}</strong>
               <span>{s.introBadgeLabel}</span>
             </div>
-          </div>
-          <div>
+          </ScrollReveal>
+          <ScrollReveal variant="fade-left" delay={0.15}>
             <p className="eyebrow">BUILT FOR YOUR BUSINESS</p>
             <h2>{s.introTitle}</h2>
             <p>{s.introText}</p>
             <Facts items={s.introFacts} className="intro-facts" />
-          </div>
+          </ScrollReveal>
         </div>
       </section>
+
       <FeatureGrid features={s.features} title={s.featureTitle} slug={s.slug} />
+
       {!!s.stats.length && (
         <div className="results-bar">
           <div className="container">
@@ -99,7 +108,9 @@ export function ServicePage({ service: s }: { service: Service }) {
           </div>
         </div>
       )}
+
       <Process title={s.processTitle} labels={s.processLabels} style={s.processStyle} />
+
       {!!s.technologies.length && (
         <section className="section technology-section">
           <div className="container">
@@ -108,27 +119,30 @@ export function ServicePage({ service: s }: { service: Service }) {
               title="Technologies We Work With"
               text="The right tools. A strong foundation. Built for what’s next."
             />
-            <div className="technology-list">
+            <StaggerContainer className="technology-list" staggerDelay={0.08}>
               {s.technologies.map((tech) => (
-                <div key={tech}>
-                  {technologyFiles[tech] ? (
-                    <img
-                      src={'/icons/' + technologyFiles[tech] + '.svg'}
-                      alt=""
-                      width={42}
-                      height={42}
-                      loading="lazy"
-                    />
-                  ) : (
-                    <Icon name={tech === 'AWS' ? 'Globe' : 'Code2'} size={42} />
-                  )}
-                  <span>{tech}</span>
-                </div>
+                <StaggerItem key={tech} variant="scale-up">
+                  <div key={tech}>
+                    {technologyFiles[tech] ? (
+                      <img
+                        src={'/icons/' + technologyFiles[tech] + '.svg'}
+                        alt=""
+                        width={42}
+                        height={42}
+                        loading="lazy"
+                      />
+                    ) : (
+                      <Icon name={tech === 'AWS' ? 'Globe' : 'Code2'} size={42} />
+                    )}
+                    <span>{tech}</span>
+                  </div>
+                </StaggerItem>
               ))}
-            </div>
+            </StaggerContainer>
           </div>
         </section>
       )}
+
       {isWhatsApp ? (
         <section className="section whatsapp-industries">
           <div className="container">
@@ -156,7 +170,9 @@ export function ServicePage({ service: s }: { service: Service }) {
           poster={s.slug === 'poster-design'}
         />
       )}
+
       <Testimonials title={s.testimonialTitle} />
+
       <CTA
         href={'/contact/?service=' + s.slug}
         title={s.ctaTitle}
@@ -169,11 +185,12 @@ export function ServicePage({ service: s }: { service: Service }) {
     </div>
   );
 }
+
 export function ServiceDirectory() {
   return (
     <>
       <section className="directory-hero pale-section">
-        <div className="container">
+        <ScrollReveal variant="fade-up" className="container">
           <p className="eyebrow">OUR SERVICES</p>
           <h1>
             One Partner.
@@ -184,12 +201,12 @@ export function ServiceDirectory() {
             From your first website to your next stage of growth, discover the expertise to move
             your business forward.
           </p>
-        </div>
+        </ScrollReveal>
       </section>
       <section className="section">
-        <div className="container service-directory">
+        <StaggerContainer className="container service-directory" staggerDelay={0.15}>
           {services.map((s, i) => (
-            <article key={s.slug}>
+            <StaggerItem key={s.slug} variant="fade-up" as="article">
               <Visual asset={s.image} alt={s.name + ' showcase'} />
               <div>
                 <span className="eyebrow">0{i + 1} / OUR EXPERTISE</span>
@@ -199,9 +216,9 @@ export function ServiceDirectory() {
                   Explore {s.name}
                 </Button>
               </div>
-            </article>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </section>
       <CTA />
     </>

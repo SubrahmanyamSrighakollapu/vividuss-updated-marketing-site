@@ -5357,3 +5357,27 @@ section[id] {
     background: linear-gradient(180deg, #f4f9ff, #f4f9ff00 30%);
   }
 }
+
+/* Scroll Header & Performance Animation Styles */
+.header {
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
+}
+.header.is-scrolled {
+  background-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(7, 80, 153, 0.08);
+}
+
+.home-hero-image-wrapper {
+  will-change: transform, opacity;
+}
+
+.trust-logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+

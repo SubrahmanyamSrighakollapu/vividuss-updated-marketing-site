@@ -1,4 +1,5 @@
 'use client';
+
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
@@ -7,15 +8,27 @@ import { Icon } from '@/components/ui/Icon';
 import { Button } from '@/components/ui/Button';
 import { navLinks } from '@/data/site';
 import { services } from '@/data/services';
+
 export function Header() {
-  const pathname = usePathname(),
-    [open, setOpen] = useState(false),
-    [sub, setSub] = useState(false),
-    ref = useRef<HTMLElement>(null);
+  const pathname = usePathname();
+  const [open, setOpen] = useState(false);
+  const [sub, setSub] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const ref = useRef<HTMLElement>(null);
+
   useEffect(() => {
     setOpen(false);
     setSub(false);
   }, [pathname]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   useEffect(() => {
     const close = (e: PointerEvent) => {
       if (!ref.current?.contains(e.target as Node)) {
@@ -26,9 +39,10 @@ export function Header() {
     document.addEventListener('pointerdown', close);
     return () => document.removeEventListener('pointerdown', close);
   }, []);
+
   return (
     <header
-      className="header"
+      className={`header ${scrolled ? 'is-scrolled' : ''}`}
       ref={ref}
       onKeyDown={(e) => {
         if (e.key === 'Escape') {
