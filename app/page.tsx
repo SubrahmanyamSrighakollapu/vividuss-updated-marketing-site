@@ -1,6 +1,7 @@
 import { metadata as pageMetadata } from '@/lib/seo';
 import { HomeHero } from '@/components/home/HomeHero';
 import { ServicesStrip } from '@/components/home/ServicesStrip';
+import { SolutionsSection } from '@/components/sections/SolutionsSection';
 import { Visual } from '@/components/ui/Visual';
 import { Icon } from '@/components/ui/Icon';
 import { Button } from '@/components/ui/Button';
@@ -120,6 +121,12 @@ export default function Home() {
       </section>
 
       <ServicesStrip />
+      <SolutionsSection
+        eyebrow="READY SOLUTIONS"
+        title="Solutions Built to Scale Your Business"
+        subtitle="Explore our industry-focused digital products engineered for high performance, top security, and instant deployment."
+        limit={6}
+      />
       <Industries />
       <ProjectShowcase />
       <Process compact />
