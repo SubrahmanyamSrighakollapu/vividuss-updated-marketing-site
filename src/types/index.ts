@@ -53,3 +53,79 @@ export type Testimonial = {
   initials: string;
   color: string;
 };
+
+export type SolutionModule = {
+  category: string;
+  features: string[];
+};
+
+export type SolutionOutcome = {
+  title: string;
+  description: string;
+  icon: string;
+};
+
+export type SolutionHandleStep = {
+  step: string;
+  title: string;
+  description: string;
+  icon: string;
+};
+
+export type SolutionItem = {
+  title: string;
+  description: string;
+  icon: string;
+};
+
+export type SolutionFaq = {
+  question: string;
+  answer: string;
+};
+
+export type Solution = {
+  slug: string;
+  title: string;
+  tagline: string;
+  category: string;
+  posterImage: string;
+  icon: string;
+  badge?: string;
+  shortDescription: string;
+  cardHighlights: string[];
+  heroHeadline: string[];
+  heroSubhead: string;
+  overview: {
+    title: string;
+    description: string;
+    points: string[];
+  };
+  whatWeProvide: {
+    title: string;
+    description: string;
+    items: SolutionItem[];
+  };
+  whatWeInclude: {
+    title: string;
+    description: string;
+    modules: SolutionModule[];
+  };
+  howWeHandle: {
+    title: string;
+    description: string;
+    steps: SolutionHandleStep[];
+  };
+  whatYouCanExpect: {
+    title: string;
+    description: string;
+    outcomes: SolutionOutcome[];
+  };
+  supportAndMaintenance: {
+    title: string;
+    description: string;
+    features: SolutionItem[];
+  };
+  techStack: string[];
+  faq: SolutionFaq[];
+};
+
