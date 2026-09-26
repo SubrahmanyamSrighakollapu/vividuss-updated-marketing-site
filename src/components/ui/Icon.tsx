@@ -81,8 +81,23 @@ import {
   LifeBuoy,
   ArrowUp,
   ExternalLink,
+  Share2,
+  Bookmark,
+  ThumbsUp,
+  MessageSquare,
+  Copy,
+  Eye,
+  Filter,
 } from 'lucide-react';
 const icons = {
+  Share2,
+  Bookmark,
+  ThumbsUp,
+  MessageSquare,
+  Copy,
+  Eye,
+  Filter,
+
   ArrowRight,
   ArrowUpRight,
   ArrowLeft,

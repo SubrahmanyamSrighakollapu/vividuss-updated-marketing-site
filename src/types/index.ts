@@ -129,3 +129,53 @@ export type Solution = {
   faq: SolutionFaq[];
 };
 
+export type BlogAuthor = {
+  name: string;
+  role: string;
+  avatar: string;
+  bio: string;
+  socialLink?: string;
+};
+
+export type BlogTocItem = {
+  id: string;
+  title: string;
+};
+
+export type BlogSection = {
+  id: string;
+  title: string;
+  content: string;
+  callout?: {
+    type: 'info' | 'tip' | 'quote' | 'code' | 'stat';
+    title?: string;
+    text: string;
+    codeSnippet?: string;
+    language?: string;
+  };
+  listItems?: string[];
+};
+
+export type BlogPost = {
+  slug: string;
+  title: string;
+  subtitle: string;
+  excerpt: string;
+  category: string;
+  readTime: string;
+  date: string;
+  isoDate: string;
+  author: BlogAuthor;
+  featured?: boolean;
+  trending?: boolean;
+  image: Asset;
+  coverImage?: Asset;
+  tags: string[];
+  keyTakeaways: string[];
+  toc: BlogTocItem[];
+  sections: BlogSection[];
+  relatedSlugs: string[];
+  viewsCount?: number;
+  likesCount?: number;
+};
+
