@@ -32,9 +32,10 @@ const slides = [
 export function HomeHero() {
   const [index, setIndex] = useState(0);
   const slide = slides[index];
+  const isRight = index === 1;
 
   return (
-    <section className="home-hero">
+    <section className={`home-hero ${isRight ? 'is-slide-right' : ''}`}>
       <AnimatePresence mode="wait">
         <motion.div
           key={index}
@@ -56,7 +57,11 @@ export function HomeHero() {
       </AnimatePresence>
 
       <div className="container home-hero-inner" style={{ position: 'relative', zIndex: 1 }}>
-        <StaggerContainer className="home-hero-copy" staggerDelay={0.15}>
+        <StaggerContainer
+          key={index}
+          className={`home-hero-copy ${isRight ? 'is-right' : ''}`}
+          staggerDelay={0.15}
+        >
           <StaggerItem variant="fade-down">
             <p className="eyebrow">YOUR VISION. OUR INNOVATION.</p>
           </StaggerItem>
@@ -85,16 +90,18 @@ export function HomeHero() {
             </div>
           </StaggerItem>
 
-          <StaggerItem variant="zoom-in">
-            <Stats
-              items={[
-                ['250+', 'Happy Clients'],
-                ['500+', 'Projects Delivered'],
-                ['10+', 'Industries Served'],
-                ['5+', 'Years of Excellence'],
-              ]}
-            />
-          </StaggerItem>
+          {index === 0 && (
+            <StaggerItem variant="zoom-in">
+              <Stats
+                items={[
+                  ['250+', 'Happy Clients'],
+                  ['500+', 'Projects Delivered'],
+                  ['10+', 'Industries Served'],
+                  ['5+', 'Years of Excellence'],
+                ]}
+              />
+            </StaggerItem>
+          )}
         </StaggerContainer>
 
         <ScrollReveal variant="fade-left" delay={0.3} className="hero-pagination">
