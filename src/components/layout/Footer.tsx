@@ -7,6 +7,7 @@ import { Newsletter } from '@/components/forms/Newsletter';
 import { SocialLinks } from './SocialLinks';
 import { navLinks, site } from '@/data/site';
 import { services } from '@/data/services';
+import { solutions } from '@/data/solutions';
 import { ScrollReveal, StaggerContainer, StaggerItem } from '@/components/ui/ScrollReveal';
 
 export function Footer() {
@@ -29,7 +30,7 @@ export function Footer() {
           <h3>Quick Links</h3>
           <ul>
             {navLinks
-              .filter((l) => l.href !== '/services/')
+              .filter((l) => l.href !== '/services/' && l.href !== '/solutions/')
               .map((l) => (
                 <li key={l.href}>
                   <Link href={l.href}>{l.label}</Link>
@@ -44,6 +45,17 @@ export function Footer() {
             {services.map((s) => (
               <li key={s.slug}>
                 <Link href={'/services/' + s.slug + '/'}>{s.name}</Link>
+              </li>
+            ))}
+          </ul>
+        </StaggerItem>
+
+        <StaggerItem variant="fade-up">
+          <h3>Solutions</h3>
+          <ul>
+            {solutions.slice(0, 6).map((s) => (
+              <li key={s.slug}>
+                <Link href={'/solutions/' + s.slug + '/'}>{s.title}</Link>
               </li>
             ))}
           </ul>

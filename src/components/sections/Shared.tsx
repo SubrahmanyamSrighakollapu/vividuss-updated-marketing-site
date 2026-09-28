@@ -66,7 +66,7 @@ export function Stats({ items, className = '' }: { items: string[][]; className?
 }
 
 export function Process({
-  title = 'Simple Process.\nPowerful Results.',
+  title = 'Engineered for Execution.\nBuilt for Impact.',
   labels,
   style = 'light',
   compact = false,
@@ -76,41 +76,94 @@ export function Process({
   style?: string;
   compact?: boolean;
 }) {
-  const steps = labels || processSteps.map((p) => p.title);
+  const stepItems = labels
+    ? labels.map((l, i) => ({
+        title: l,
+        description: processSteps[i]?.description || 'Engineered with precision, security, and digital best practices.',
+        icon: processSteps[i]?.icon || 'CheckCircle2',
+      }))
+    : processSteps;
+
   return (
     <section
       className={
-        'process-section ' +
+        'section process-section process-flow-section ' +
         (style === 'dark' ? 'dark-section' : 'pale-section') +
         ' ' +
         (compact ? 'process-compact' : '')
       }
+      id="process"
     >
-      <div className="container process-layout">
-        <ScrollReveal variant="fade-right" className="process-intro">
-          <p className="eyebrow">OUR PROCESS</p>
-          <h2>{title}</h2>
-          {!compact && (
-            <p>
-              A clear approach. Complete collaboration.
-              <br />
-              Exceptional results at every step.
-            </p>
-          )}
-        </ScrollReveal>
+      <div className="container">
+        <SectionHeading
+          eyebrow="OUR PROCESS"
+          title={title.replace('\n', ' ')}
+          text="A transparent, battle-tested 6-step flow designed to take your ideas from concept to market leadership."
+        />
 
-        <StaggerContainer className="process-steps" staggerDelay={0.15} as="ol">
-          {steps.map((label, index) => (
-            <StaggerItem key={label} variant="fade-up" as="li">
-              <div className="process-icon">
-                <Icon name={processSteps[Math.min(index, 4)].icon} size={30} />
-                <span>{String(index + 1).padStart(2, '0')}</span>
-              </div>
-              <h3>{label}</h3>
-              <p>{processSteps[Math.min(index, 4)].description}</p>
-            </StaggerItem>
-          ))}
-        </StaggerContainer>
+        <div className="process-flow-container">
+          {/* Animated SVG Wave Connector Line */}
+          <svg
+            className="process-flow-wave"
+            viewBox="0 0 1200 180"
+            fill="none"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M 50 110 C 150 20, 250 160, 350 90 C 450 20, 550 160, 650 90 C 750 20, 850 160, 950 90 C 1050 20, 1150 120, 1180 90"
+              stroke="url(#processGradient)"
+              strokeWidth="3"
+              strokeDasharray="8 6"
+            />
+            <defs>
+              <linearGradient id="processGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#075099" stopOpacity="0.2" />
+                <stop offset="30%" stopColor="#f4a800" stopOpacity="0.8" />
+                <stop offset="70%" stopColor="#075099" stopOpacity="0.8" />
+                <stop offset="100%" stopColor="#f4a800" stopOpacity="0.3" />
+              </linearGradient>
+            </defs>
+          </svg>
+
+          <StaggerContainer className="process-flow-track" staggerDelay={0.08}>
+            {stepItems.map((step, index) => {
+              const isEven = index % 2 === 0;
+              return (
+                <StaggerItem
+                  key={step.title}
+                  variant="fade-up"
+                  className={`process-flow-item ${isEven ? 'pos-top' : 'pos-bottom'}`}
+                >
+                  <div className="process-flow-node">
+                    {/* Node connector dot on the wave */}
+                    <div className="process-node-dot">
+                      <span className="dot-pulse" />
+                      <span className="dot-core" />
+                    </div>
+
+                    <div className="process-node-content">
+                      <div className="node-header">
+                        <span className={'node-icon tone-' + (index % 4)}>
+                          <Icon name={step.icon} size={24} />
+                        </span>
+                        <span className="node-step-tag">0{index + 1}</span>
+                      </div>
+                      <h3>{step.title}</h3>
+                      <p>{step.description}</p>
+                    </div>
+
+                    {index < stepItems.length - 1 && (
+                      <span className="flow-connector-arrow">
+                        <Icon name="ChevronRight" size={16} />
+                      </span>
+                    )}
+                  </div>
+                </StaggerItem>
+              );
+            })}
+          </StaggerContainer>
+        </div>
       </div>
     </section>
   );

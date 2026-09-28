@@ -39,14 +39,39 @@ export const navLinks = [
   { label: 'Portfolio', href: '/portfolio/' },
   { label: 'Blogs', href: '/blogs/' },
   { label: 'Franchise', href: '/franchise/' },
-  { label: 'Contact', href: '/contact/' },
+  // { label: 'Contact', href: '/contact/' },
 ];
 export const processSteps = [
-  { title: 'Discover', description: 'Understand your goals and challenges', icon: 'Search' },
-  { title: 'Plan', description: 'Create the right strategy and roadmap', icon: 'ClipboardList' },
-  { title: 'Design', description: 'Craft engaging experiences', icon: 'PenTool' },
-  { title: 'Develop', description: 'Build with precision and best practices', icon: 'Code2' },
-  { title: 'Deliver', description: 'Launch, measure and grow', icon: 'Rocket' },
+  {
+    title: 'Discovery & Audit',
+    description: 'In-depth goal alignment, target market analysis, and technical feasibility audit.',
+    icon: 'Search',
+  },
+  {
+    title: 'Strategy & Roadmap',
+    description: 'Crafting clear technical roadmaps, system architecture, and user journey blueprints.',
+    icon: 'ClipboardList',
+  },
+  {
+    title: 'UI/UX Design',
+    description: 'Designing intuitive, accessible user interfaces and interactive prototypes.',
+    icon: 'PenTool',
+  },
+  {
+    title: 'Agile Engineering',
+    description: 'Building clean code, high-performance APIs, and scalable web/mobile backends.',
+    icon: 'Code2',
+  },
+  {
+    title: 'Quality & Security QA',
+    description: 'Automated testing, security hardening, multi-device QA, and performance tuning.',
+    icon: 'ShieldCheck',
+  },
+  {
+    title: 'Launch & Continuous Growth',
+    description: 'Seamless cloud deployment, continuous integration, analytics, and scale optimization.',
+    icon: 'Rocket',
+  },
 ];
 export const testimonials = [
   {
