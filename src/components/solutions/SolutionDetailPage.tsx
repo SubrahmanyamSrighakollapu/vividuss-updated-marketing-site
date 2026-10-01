@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Icon } from '@/components/ui/Icon';
 import { Button } from '@/components/ui/Button';
+import { site } from '@/data/site';
+import { RequestCallbackCard } from '@/components/ui/RequestCallbackCard';
 import { ScrollReveal, StaggerContainer, StaggerItem } from '@/components/ui/ScrollReveal';
 import type { Solution } from '@/types';
 
@@ -392,10 +394,14 @@ export function SolutionDetailPage({ solution }: SolutionDetailPageProps) {
               <Button href="/contact/" variant="primary">
                 Request Live Demo & Proposal
               </Button>
-              <a href="tel:+918750749299" className="phone-cta-btn">
+              <a href={'tel:' + site.phoneHref} className="phone-cta-btn">
                 <Icon name="Phone" size={18} />
-                <span>Call Us Now: +91 87507 49299</span>
+                <span>Call Us Now: {site.phone}</span>
               </a>
+            </div>
+
+            <div style={{ maxWidth: '440px', margin: '36px auto 0 auto' }}>
+              <RequestCallbackCard variant="dark" showWhatsApp />
             </div>
           </ScrollReveal>
         </div>

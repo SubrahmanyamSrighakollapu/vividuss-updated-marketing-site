@@ -6,17 +6,21 @@ import { Button } from '@/components/ui/Button';
 import { ContactForm } from '@/components/forms/ContactForm';
 import { SocialLinks } from '@/components/layout/SocialLinks';
 import { Facts } from '@/components/sections/Shared';
+import { ContactLocationsMap } from '@/components/sections/ContactLocationsMap';
+import { ContactFaqSection } from '@/components/sections/ContactFaqSection';
+import { RequestCallbackCard } from '@/components/ui/RequestCallbackCard';
 import { ScrollReveal, StaggerContainer, StaggerItem } from '@/components/ui/ScrollReveal';
 
 export const metadata = pageMetadata(
   'Contact Us',
-  'Have a project in mind? Talk to the Vividuss team about web development, mobile apps, marketing, design or franchise opportunities.',
+  'Reach out to Vividuss for web development, mobile apps, WhatsApp CRM, marketing, or franchise opportunities in Hyderabad.',
   '/contact/',
 );
 
 export default function Contact() {
   return (
     <>
+      {/* Contact Hero Section */}
       <section className="contact-hero pale-section">
         <div className="container split-grid">
           <ScrollReveal variant="fade-right">
@@ -27,16 +31,16 @@ export default function Contact() {
               Into <em>Reality.</em>
             </h1>
             <p>
-              Have a project in mind, a question, or just want to say hello?
+              Have a project in mind, a question, or want to explore digital transformation?
               <br />
-              We’re here to listen and help you move forward.
+              Our team in Hyderabad is here to listen and help you scale.
             </p>
             <Facts
               className="hero-facts"
               items={[
-                { icon: 'MessagesSquare', title: 'Let’s Talk', description: 'We’re All Ears' },
-                { icon: 'Lightbulb', title: 'Share Your Vision', description: 'Big Ideas Welcome' },
-                { icon: 'Handshake', title: 'Build Together', description: 'Great Things Ahead' },
+                { icon: 'MessagesSquare', title: 'Quick Response', description: '< 2 Hours SLA' },
+                { icon: 'ShieldCheck', title: '100% Confidential', description: 'NDA Guaranteed' },
+                { icon: 'Handshake', title: 'Dedicated Support', description: 'Solution Architects' },
               ]}
             />
           </ScrollReveal>
@@ -44,17 +48,17 @@ export default function Contact() {
           <ScrollReveal variant="fade-left" delay={0.15} className="contact-hero-art">
             <Visual
               asset="/images/contact.webp"
-              alt="Friendly customer support specialist in a bright office"
+              alt="Friendly customer support specialist at Vividuss"
               priority
             />
             <div className="contact-promises">
               {[
                 ['Clock3', 'Quick Response'],
-                ['Headphones', 'Expert Support'],
+                ['Headphones', 'Expert Technical Support'],
                 ['HeartHandshake', 'Long-Term Partnership'],
               ].map(([icon, text]) => (
                 <span key={text}>
-                  <Icon name={icon} size={19} />
+                  <Icon name={icon} size={18} />
                   {text}
                 </span>
               ))}
@@ -68,85 +72,66 @@ export default function Contact() {
         </div>
       </section>
 
+      {/* Main Contact Section: Perfectly Balanced Height (Form on right, direct channels on left) */}
       <section className="section contact-main" id="contact-form">
         <div className="container contact-main-grid">
-          <ScrollReveal variant="fade-right">
+          <ScrollReveal variant="fade-right" className="contact-info-col">
             <p className="eyebrow">GET IN TOUCH</p>
             <h2>
               We’d Love to Hear
               <br />
               from You
             </h2>
-            <p>
-              Reach out through any of the channels below.
-              <br />
-              Our team will be happy to assist you.
+            <p className="contact-lead-text">
+              Tell us about your project vision or business inquiry. Our team responds to all incoming requests within 2 business hours.
             </p>
-            <StaggerContainer className="contact-cards" staggerDelay={0.1}>
-              <StaggerItem variant="fade-up">
-                <a
-                  href={
-                    'https://www.google.com/maps/search/?api=1&query=' +
-                    encodeURIComponent(site.mapQuery)
-                  }
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <span className="feature-icon">
-                    <Icon name="MapPin" />
-                  </span>
-                  <span>
-                    <strong>Visit Our Office</strong>
-                    <span>
-                      {site.address}
-                      <br />
-                      {site.city}
-                    </span>
-                  </span>
-                  <Icon name="ArrowUpRight" size={18} />
-                </a>
-              </StaggerItem>
 
-              <StaggerItem variant="fade-up">
-                <a href={'tel:' + site.phoneHref}>
-                  <span className="feature-icon">
-                    <Icon name="Phone" />
-                  </span>
-                  <span>
-                    <strong>Give Us a Call</strong>
-                    <span>
-                      {site.phone}
-                      <br />
-                      Monday – Saturday, 9:00 AM – 6:00 PM
-                    </span>
-                  </span>
-                  <Icon name="ArrowUpRight" size={18} />
-                </a>
-              </StaggerItem>
+            <div className="contact-quick-methods">
+              <a href={'tel:' + site.phoneHref} className="quick-method-card">
+                <div className="method-icon-box">
+                  <Icon name="Phone" size={20} />
+                </div>
+                <div className="method-text">
+                  <small>Call Us Directly</small>
+                  <strong>{site.phone}</strong>
+                  <span>Mon – Sat, 9 AM – 6 PM IST</span>
+                </div>
+                <Icon name="ArrowUpRight" size={18} className="method-arrow" />
+              </a>
 
-              <StaggerItem variant="fade-up">
-                <a href={'mailto:' + site.email}>
-                  <span className="feature-icon">
-                    <Icon name="Mail" />
-                  </span>
-                  <span>
-                    <strong>Drop Us an Email</strong>
-                    <span>
-                      {site.email}
-                      <br />
-                      We’d love to hear about your project.
-                    </span>
-                  </span>
-                  <Icon name="ArrowUpRight" size={18} />
-                </a>
-              </StaggerItem>
-            </StaggerContainer>
+              <a href={'mailto:' + site.email} className="quick-method-card">
+                <div className="method-icon-box email">
+                  <Icon name="Mail" size={20} />
+                </div>
+                <div className="method-text">
+                  <small>Drop Us an Email</small>
+                  <strong>{site.email}</strong>
+                  <span>Fast SLA for Inquiry Responses</span>
+                </div>
+                <Icon name="ArrowUpRight" size={18} className="method-arrow" />
+              </a>
 
-            <p className="social-heading">Follow Our Journey</p>
-            <SocialLinks />
-            <div className="contact-decoration" aria-hidden="true">
-              <Icon name="Globe" size={170} />
-              <Icon name="MapPin" size={37} />
+              <a
+                href={'https://wa.me/' + site.phoneHref.replace(/[^0-9]/g, '')}
+                target="_blank"
+                rel="noreferrer"
+                className="quick-method-card whatsapp"
+              >
+                <div className="method-icon-box wa">
+                  <Icon name="MessageSquare" size={20} />
+                </div>
+                <div className="method-text">
+                  <small>Chat on WhatsApp</small>
+                  <strong>Instant Support Desk</strong>
+                  <span>Connect with an expert live</span>
+                </div>
+                <Icon name="ArrowUpRight" size={18} className="method-arrow" />
+              </a>
+            </div>
+
+            <div className="contact-social-wrap">
+              <p className="social-heading">Follow Our Journey</p>
+              <SocialLinks />
             </div>
           </ScrollReveal>
 
@@ -156,55 +141,113 @@ export default function Contact() {
         </div>
       </section>
 
-      <section className="location-section">
-        <ScrollReveal variant="fade-right" className="location-copy dark-section">
-          <div>
-            <p className="eyebrow">FIND US HERE</p>
-            <h2>Visit Our Office</h2>
-            <p>
-              Let’s meet, exchange ideas, and
-              <br />
-              build something meaningful.
-            </p>
-            <p>
-              <Icon name="MapPin" size={18} />
-              {site.address}
-              <br />
-              {site.city}
-            </p>
-            <Button
-              variant="white"
-              href={
-                'https://www.google.com/maps/search/?api=1&query=' +
-                encodeURIComponent(site.mapQuery)
-              }
-            >
-              Get Directions
-            </Button>
-          </div>
-        </ScrollReveal>
-        <iframe
-          title="Map of the Madhapur area in Hyderabad"
-          src={
-            'https://maps.google.com/maps?q=' +
-            encodeURIComponent(site.mapQuery) +
-            '&z=14&output=embed'
-          }
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          allowFullScreen
-        />
+      {/* Office Locations & Support Cards Row (3-Column Horizontal Grid Below Form) */}
+      <section className="section office-cards-section pale-section">
+        <div className="container">
+          <ScrollReveal variant="fade-up" className="section-heading center">
+            <p className="eyebrow">OUR HYDERABAD OFFICES</p>
+            <h2>Official Addresses & Direct Support</h2>
+            <p>Visit our corporate headquarters, reach our registered seat, or request an immediate call back.</p>
+          </ScrollReveal>
+
+          <StaggerContainer className="office-three-grid" staggerDelay={0.1}>
+            {/* Card 1: Corresponding & Corporate Office */}
+            <StaggerItem variant="fade-up" className="office-col-card primary-office">
+              <div className="office-card-header">
+                <span className="card-badge corporate-badge">
+                  <Icon name="Building2" size={14} />
+                  Corporate Headquarters
+                </span>
+                <span className="pill-tag">Primary</span>
+              </div>
+              <div className="office-card-body">
+                <h3>{site.correspondingAddress.company}</h3>
+                <p className="address-text">
+                  <strong>{site.correspondingAddress.building}</strong>, {site.correspondingAddress.unit}
+                  <br />
+                  {site.correspondingAddress.area}
+                  <br />
+                  <span className="highlight-city">{site.correspondingAddress.city}</span>
+                </p>
+                <div className="card-footer-actions">
+                  <a
+                    href={
+                      'https://www.google.com/maps/search/?api=1&query=' +
+                      encodeURIComponent(site.correspondingAddress.mapQuery)
+                    }
+                    target="_blank"
+                    rel="noreferrer"
+                    className="card-action-btn"
+                  >
+                    <span>Get Directions</span>
+                    <Icon name="ArrowUpRight" size={16} />
+                  </a>
+                </div>
+              </div>
+            </StaggerItem>
+
+            {/* Card 2: Registered Office */}
+            <StaggerItem variant="fade-up" className="office-col-card registered-office">
+              <div className="office-card-header">
+                <span className="card-badge registered-badge">
+                  <Icon name="MapPin" size={14} />
+                  Registered Office
+                </span>
+              </div>
+              <div className="office-card-body">
+                <h3>Registered Address</h3>
+                <p className="address-text">
+                  <strong>{site.registeredAddress.line1}</strong>
+                  <br />
+                  {site.registeredAddress.line2}
+                  <br />
+                  <span className="highlight-city">{site.registeredAddress.city}</span>
+                </p>
+                <div className="card-footer-actions">
+                  <a
+                    href={
+                      'https://www.google.com/maps/search/?api=1&query=' +
+                      encodeURIComponent(site.registeredAddress.mapQuery)
+                    }
+                    target="_blank"
+                    rel="noreferrer"
+                    className="card-action-btn"
+                  >
+                    <span>View Location</span>
+                    <Icon name="ArrowUpRight" size={16} />
+                  </a>
+                </div>
+              </div>
+            </StaggerItem>
+
+            {/* Card 3: Request A Call Back */}
+            <StaggerItem variant="fade-up" className="office-col-card callback-col">
+              <RequestCallbackCard
+                title="REQUEST A CALL BACK"
+                description="Speak directly with a solution architect or support agent."
+                showWhatsApp
+              />
+            </StaggerItem>
+          </StaggerContainer>
+        </div>
       </section>
 
+      {/* Interactive Map Explorer Section */}
+      <ContactLocationsMap />
+
+      {/* Contact FAQ Section */}
+      <ContactFaqSection />
+
+      {/* Conversation CTA */}
       <section className="section conversation-cta pale-section">
         <ScrollReveal variant="scale-up" className="container">
           <div>
             <p className="eyebrow">LET’S CREATE SOMETHING GREAT</p>
             <h2>Have a Project in Mind?</h2>
             <p>
-              Your next big idea deserves the right partner.
+              Your next big idea deserves the right digital engineering partner.
               <br />
-              Let’s bring it to life.
+              Let’s bring it to life together.
             </p>
             <Button href="#contact-form">Start a Conversation</Button>
           </div>

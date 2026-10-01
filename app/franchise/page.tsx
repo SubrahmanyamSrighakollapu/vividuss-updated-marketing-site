@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/Button';
 import { StoryButton } from '@/components/sections/StoryButton';
 import { Stats, SectionHeading, CTA } from '@/components/sections/Shared';
 import { Testimonials } from '@/components/sections/Testimonials';
+import { RequestCallbackCard } from '@/components/ui/RequestCallbackCard';
 import { ScrollReveal, StaggerContainer, StaggerItem } from '@/components/ui/ScrollReveal';
 
 export const metadata = pageMetadata(
@@ -227,6 +228,18 @@ export default function Franchise() {
               </StaggerItem>
             ))}
           </StaggerContainer>
+        </div>
+      </section>
+
+      <section className="section pale-section">
+        <div className="container" style={{ maxWidth: '580px', marginInline: 'auto' }}>
+          <ScrollReveal variant="fade-up">
+            <RequestCallbackCard
+              title="FRANCHISE INQUIRY & CALL BACK"
+              description="Speak directly with our Franchise & Business Partnerships team to evaluate investment options and territory availability."
+              showWhatsApp
+            />
+          </ScrollReveal>
         </div>
       </section>
 

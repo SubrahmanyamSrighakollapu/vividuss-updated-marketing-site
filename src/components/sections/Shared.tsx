@@ -5,6 +5,7 @@ import { Visual } from '@/components/ui/Visual';
 import { Button } from '@/components/ui/Button';
 import { processSteps, site } from '@/data/site';
 import { ContactForm } from '@/components/forms/ContactForm';
+import { RequestCallbackCard } from '@/components/ui/RequestCallbackCard';
 import type { Fact } from '@/types';
 import { ScrollReveal, StaggerContainer, StaggerItem } from '@/components/ui/ScrollReveal';
 
@@ -248,14 +249,18 @@ export function ContactSection() {
                 <div>
                   <Icon name="MapPin" />
                   <span>
-                    <small>Visit Us</small>
-                    {site.address}
+                    <small>Corporate Office</small>
+                    {site.correspondingAddress.building}, {site.correspondingAddress.unit}
                     <br />
-                    {site.city}
+                    {site.correspondingAddress.city}
                   </span>
                 </div>
               </StaggerItem>
             </StaggerContainer>
+
+            <div style={{ marginTop: '24px' }}>
+              <RequestCallbackCard variant="glass" showWhatsApp />
+            </div>
           </div>
         </ScrollReveal>
 
