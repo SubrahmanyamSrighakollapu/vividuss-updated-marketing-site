@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Visual } from '@/components/ui/Visual';
 import { Icon } from '@/components/ui/Icon';
@@ -13,26 +13,41 @@ const slides = [
     image: '/images/home-hero-image-one.png',
     title: 'Ideas Today.',
     highlight: 'Greater Tomorrows.',
-    text: 'We craft innovative digital solutions that help businesses transform, scale, and stay ahead.',
+    text: 'We craft innovative, AI-powered digital solutions that help businesses transform, scale, and stay ahead.',
   },
   {
     image: '/images/home-hero-image-two.png',
     title: 'Big Ambitions.',
     highlight: 'Brighter Possibilities.',
-    text: 'Strategy, design and technology come together to turn your next big idea into meaningful progress.',
+    text: 'Strategy, design and AI automation come together to turn your next big idea into meaningful progress.',
   },
   {
     image: '/images/home-hero-image-three.png',
     title: 'Built for People.',
     highlight: 'Designed for Growth.',
-    text: 'Thoughtful experiences. Powerful technology. A digital partner for every step of your journey.',
+    text: 'Thoughtful experiences. Intelligent AI automation. A digital partner for every step of your journey.',
   },
+];
+
+const aiTags = [
+  'AI-ENHANCED PLATFORMS',
+  'INTELLIGENT AUTOMATION',
+  'PREDICTIVE AI MODELS',
+  'GEN-AI INTEGRATION',
 ];
 
 export function HomeHero() {
   const [index, setIndex] = useState(0);
+  const [tagIndex, setTagIndex] = useState(0);
   const slide = slides[index];
   const isRight = index === 1;
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTagIndex((prev) => (prev + 1) % aiTags.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section className={`home-hero ${isRight ? 'is-slide-right' : ''}`}>
@@ -63,7 +78,34 @@ export function HomeHero() {
           staggerDelay={0.15}
         >
           <StaggerItem variant="fade-down">
-            <p className="eyebrow">YOUR VISION. OUR INNOVATION.</p>
+            <div className="hero-eyebrow-row">
+              <motion.div
+                className="ai-badge-hero"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.4 }}
+              >
+                <span className="ai-sparkle-icon">
+                  <Icon name="Sparkles" size={14} />
+                </span>
+                <div className="ai-badge-text-slider">
+                  <AnimatePresence mode="wait">
+                    <motion.span
+                      key={aiTags[tagIndex]}
+                      initial={{ y: 12, opacity: 0, filter: 'blur(3px)' }}
+                      animate={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
+                      exit={{ y: -12, opacity: 0, filter: 'blur(3px)' }}
+                      transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+                      className="ai-badge-text"
+                    >
+                      {aiTags[tagIndex]}
+                    </motion.span>
+                  </AnimatePresence>
+                </div>
+                <span className="ai-shimmer-beam" />
+              </motion.div>
+              <p className="eyebrow">YOUR VISION. OUR INNOVATION.</p>
+            </div>
           </StaggerItem>
           
           <AnimatePresence mode="wait">

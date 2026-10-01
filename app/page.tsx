@@ -1,6 +1,7 @@
 import { metadata as pageMetadata } from '@/lib/seo';
 import { HomeHero } from '@/components/home/HomeHero';
 import { ServicesStrip } from '@/components/home/ServicesStrip';
+import { AISolutionsSection } from '@/components/sections/AISolutionsSection';
 import { SolutionsSection } from '@/components/sections/SolutionsSection';
 import { Visual } from '@/components/ui/Visual';
 import { Icon } from '@/components/ui/Icon';
@@ -83,16 +84,16 @@ export default function Home() {
               transforming ideas into meaningful digital experiences.
             </p>
             <p>
-              At Vividuss, we combine strategy, creativity and technology to deliver solutions that
+              At Vividuss, we combine strategy, creativity, AI automation, and cloud technology to deliver solutions that
               add real value to your business.
             </p>
             <Facts
               className="vertical-facts"
               items={[
                 {
-                  icon: 'Lightbulb',
-                  title: 'Innovation at Our Core',
-                  description: 'Fresh ideas. Smarter solutions.',
+                  icon: 'Sparkles',
+                  title: 'AI-Driven Innovation',
+                  description: 'Smart models. Intelligent workflows.',
                 },
                 {
                   icon: 'Users',
@@ -121,6 +122,7 @@ export default function Home() {
       </section>
 
       <ServicesStrip />
+      <AISolutionsSection />
       <SolutionsSection
         eyebrow="READY SOLUTIONS"
         title="Solutions Built to Scale Your Business"
