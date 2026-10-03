@@ -101,68 +101,33 @@ export function Process({
           text="A transparent, battle-tested 6-step flow designed to take your ideas from concept to market leadership."
         />
 
-        <div className="process-flow-container">
-          {/* Animated SVG Wave Connector Line */}
-          <svg
-            className="process-flow-wave"
-            viewBox="0 0 1200 180"
-            fill="none"
-            preserveAspectRatio="none"
-            aria-hidden="true"
-          >
-            <path
-              d="M 50 110 C 150 20, 250 160, 350 90 C 450 20, 550 160, 650 90 C 750 20, 850 160, 950 90 C 1050 20, 1150 120, 1180 90"
-              stroke="url(#processGradient)"
-              strokeWidth="3"
-              strokeDasharray="8 6"
-            />
-            <defs>
-              <linearGradient id="processGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#075099" stopOpacity="0.2" />
-                <stop offset="30%" stopColor="#f4a800" stopOpacity="0.8" />
-                <stop offset="70%" stopColor="#075099" stopOpacity="0.8" />
-                <stop offset="100%" stopColor="#f4a800" stopOpacity="0.3" />
-              </linearGradient>
-            </defs>
-          </svg>
-
-          <StaggerContainer className="process-flow-track" staggerDelay={0.08}>
+        <div className="process-modern-container">
+          <StaggerContainer className="process-modern-grid" staggerDelay={0.08}>
             {stepItems.map((step, index) => {
-              const isEven = index % 2 === 0;
               return (
-                <StaggerItem
-                  key={step.title}
-                  variant="fade-up"
-                  className={`process-flow-item ${isEven ? 'pos-top' : 'pos-bottom'}`}
-                >
-                  <div className="process-flow-node">
-                    {/* Node connector dot on the wave */}
-                    <div className="process-node-dot">
-                      <span className="dot-pulse" />
-                      <span className="dot-core" />
+                <StaggerItem key={step.title} variant="fade-up" className="process-modern-item">
+                  <article className="process-modern-step">
+                    <div className="process-modern-marker" aria-hidden="true">
+                      <span className="process-modern-number">0{index + 1}</span>
+                      <span className={'process-modern-icon tone-' + (index % 4)}>
+                        <Icon name={step.icon} size={23} />
+                      </span>
                     </div>
-
-                    <div className="process-node-content">
-                      <div className="node-header">
-                        <span className={'node-icon tone-' + (index % 4)}>
-                          <Icon name={step.icon} size={24} />
-                        </span>
-                        <span className="node-step-tag">0{index + 1}</span>
-                      </div>
+                    <div className="process-modern-copy">
                       <h3>{step.title}</h3>
                       <p>{step.description}</p>
                     </div>
-
-                    {index < stepItems.length - 1 && (
-                      <span className="flow-connector-arrow">
-                        <Icon name="ChevronRight" size={16} />
-                      </span>
-                    )}
-                  </div>
+                  </article>
                 </StaggerItem>
               );
             })}
           </StaggerContainer>
+          <div className="process-route-turn" aria-hidden="true">
+            <span className="process-route-orbit">
+              <Icon name="ArrowDownLeft" size={19} />
+            </span>
+            <span className="process-route-label">Next phase</span>
+          </div>
         </div>
       </div>
     </section>

@@ -39,8 +39,31 @@ const aiTags = [
 export function HomeHero() {
   const [index, setIndex] = useState(0);
   const [tagIndex, setTagIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
   const slide = slides[index];
   const isRight = index === 1;
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const updateMotionPreference = () => setPrefersReducedMotion(mediaQuery.matches);
+
+    updateMotionPreference();
+    mediaQuery.addEventListener('change', updateMotionPreference);
+    return () => mediaQuery.removeEventListener('change', updateMotionPreference);
+  }, []);
+
+  useEffect(() => {
+    if (isPaused || prefersReducedMotion) return;
+
+    const interval = window.setInterval(() => {
+      if (!document.hidden) {
+        setIndex((current) => (current + 1) % slides.length);
+      }
+    }, 6000);
+
+    return () => window.clearInterval(interval);
+  }, [isPaused, prefersReducedMotion]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -50,7 +73,15 @@ export function HomeHero() {
   }, []);
 
   return (
-    <section className={`home-hero ${isRight ? 'is-slide-right' : ''}`}>
+    <section
+      className={`home-hero ${isRight ? 'is-slide-right' : ''}`}
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+      onFocusCapture={() => setIsPaused(true)}
+      onBlurCapture={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget)) setIsPaused(false);
+      }}
+    >
       <AnimatePresence mode="wait">
         <motion.div
           key={index}
@@ -155,10 +186,16 @@ export function HomeHero() {
             />
           </div>
           <span>0{slides.length}</span>
-          <button aria-label="Previous hero message" onClick={() => setIndex((index + 2) % 3)}>
+          <button
+            aria-label="Previous hero message"
+            onClick={() => setIndex((current) => (current - 1 + slides.length) % slides.length)}
+          >
             <Icon name="ArrowLeft" size={17} />
           </button>
-          <button aria-label="Next hero message" onClick={() => setIndex((index + 1) % 3)}>
+          <button
+            aria-label="Next hero message"
+            onClick={() => setIndex((current) => (current + 1) % slides.length)}
+          >
             <Icon name="ArrowRight" size={17} />
           </button>
         </ScrollReveal>
