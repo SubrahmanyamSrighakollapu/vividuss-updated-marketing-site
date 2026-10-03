@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { site } from '@/data/site';
 import { services } from '@/data/services';
-import { blogPosts } from '@/data/blogs';
+// import { blogPosts } from '@/data/blogs';
 export const dynamic = 'force-static';
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
@@ -10,12 +10,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'services/',
     'portfolio/',
     'franchise/',
-    'blogs/',
+    // 'blogs/',
     'contact/',
     'privacy-policy/',
     'terms-and-conditions/',
     ...services.map((s) => 'services/' + s.slug + '/'),
-    ...blogPosts.map((b) => 'blogs/' + b.slug + '/'),
+    // ...blogPosts.map((b) => 'blogs/' + b.slug + '/'),
   ].map((path) => ({
     url: new URL('/' + path, site.url).href,
     changeFrequency: 'monthly',

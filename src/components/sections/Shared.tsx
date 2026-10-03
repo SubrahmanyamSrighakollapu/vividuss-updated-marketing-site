@@ -98,10 +98,10 @@ export function Process({
         <SectionHeading
           eyebrow="OUR PROCESS"
           title={title.replace('\n', ' ')}
-          text="A transparent, battle-tested 6-step flow designed to take your ideas from concept to market leadership."
+          text={`A transparent, battle-tested ${stepItems.length}-step flow designed to take your ideas from concept to market leadership.`}
         />
 
-        <div className="process-modern-container">
+        <div className={`process-modern-container process-count-${stepItems.length}`}>
           <StaggerContainer className="process-modern-grid" staggerDelay={0.08}>
             {stepItems.map((step, index) => {
               return (

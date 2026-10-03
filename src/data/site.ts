@@ -37,7 +37,7 @@ export const navLinks = [
   { label: 'Services', href: '/services/' },
   { label: 'Solutions', href: '/solutions/' },
   { label: 'Portfolio', href: '/portfolio/' },
-  { label: 'Blogs', href: '/blogs/' },
+  // { label: 'Blogs', href: '/blogs/' },
   { label: 'Franchise', href: '/franchise/' },
   // { label: 'Contact', href: '/contact/' },
 ];
@@ -75,35 +75,49 @@ export const processSteps = [
 ];
 export const testimonials = [
   {
-    name: 'Ramesh Kumar',
-    role: 'CEO, NextGen Solutions',
+    name: 'Arun Kumar',
+    role: 'Founder & Managing Director, Landvest',
     quote:
-      'Vividuss transformed our digital presence. Their team is professional, innovative and highly reliable.',
-    initials: 'RK',
+      'Vividuss understood our vision and translated it into a polished digital experience. Their strategic approach, attention to detail, and dependable execution made them a valuable technology partner for Landvest.',
+    image: '/images/arunkumar-landvest.jpeg',
+    initials: 'AK',
     color: 'blue',
   },
   {
-    name: 'Priya Sharma',
-    role: 'CTO, HexaLab',
-    quote: 'Excellent experience working with Vividuss. They delivered beyond our expectations.',
-    initials: 'PS',
+    name: 'K. Krishna Chaitanya',
+    role: 'Director, Flybyte',
+    quote:
+      'The Vividuss team brought clarity, creativity, and strong technical execution to our project. They worked closely with us at every stage and delivered a solution that supports Flybyte’s growth.',
+    image: '/images/chaitanya-flybyte.jpeg',
+    initials: 'KC',
     color: 'rose',
   },
   {
-    name: 'Arjun Mehta',
-    role: 'Founder, GrowthX',
+    name: 'Shyam',
+    role: 'MDGPay',
     quote:
-      'A trusted technology partner. Their strategic approach and dedication made a real difference.',
-    initials: 'AM',
+      'Vividuss helped us build a dependable digital experience around speed, usability, and trust. Their technical expertise and responsive approach made the entire journey from planning to launch smooth and effective.',
+    image: '/images/Shyam-mdgpay.jpeg',
+    initials: 'S',
     color: 'teal',
   },
+  {
+    name: 'Manohar',
+    role: 'Director, Mdigimart',
+    quote:
+      'Working with Vividuss gave us the technical confidence to move faster. The team understood our priorities, communicated clearly, and built a reliable solution designed for long-term scale.',
+    image: '/images/manohar-mdigimart.jpeg',
+    initials: 'M',
+    color: 'blue',
+  },
 ];
-export const franchiseTestimonials = [
+const legacyFranchiseTestimonials = [
   {
     name: 'Amit Sharma',
     role: 'Delhi',
     quote:
       'Vividuss gave me the perfect opportunity to start my own business with full support. The team is always there whenever I need help.',
+    image: null,
     initials: 'AS',
     color: 'blue',
   },
@@ -112,6 +126,7 @@ export const franchiseTestimonials = [
     role: 'Ahmedabad',
     quote:
       'A trusted brand with excellent systems and marketing support. Highly recommended for anyone looking for a business opportunity.',
+    image: null,
     initials: 'SP',
     color: 'rose',
   },
@@ -120,7 +135,13 @@ export const franchiseTestimonials = [
     role: 'Pune',
     quote:
       'The onboarding process was smooth and the support is amazing. I’m proud to be a Vividuss franchise partner.',
+    image: null,
     initials: 'RM',
     color: 'teal',
   },
 ];
+
+// Partner Stories now feature the same verified client profiles used across the site.
+export const franchiseTestimonials = testimonials;
+
+void legacyFranchiseTestimonials;

@@ -1,11 +1,11 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { testimonials, franchiseTestimonials } from '@/data/site';
 import { Icon } from '@/components/ui/Icon';
 import { Visual } from '@/components/ui/Visual';
 import { SectionHeading } from './Shared';
-import { ScrollReveal, StaggerContainer, StaggerItem } from '@/components/ui/ScrollReveal';
+import { ScrollReveal } from '@/components/ui/ScrollReveal';
 
 export function Testimonials({
   title = 'What Our Clients Say',
@@ -16,9 +16,28 @@ export function Testimonials({
 }) {
   const entries = franchise ? franchiseTestimonials : testimonials;
   const [start, setStart] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  useEffect(() => {
+    if (isPaused || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const interval = window.setInterval(() => {
+      if (!document.hidden) setStart((current) => (current + 1) % entries.length);
+    }, 6500);
+
+    return () => window.clearInterval(interval);
+  }, [entries.length, isPaused]);
 
   return (
-    <section className="section testimonials-section">
+    <section
+      className="section testimonials-section"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+      onFocusCapture={() => setIsPaused(true)}
+      onBlurCapture={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget)) setIsPaused(false);
+      }}
+    >
       <div className="container">
         <SectionHeading
           eyebrow={franchise ? 'PARTNER STORIES' : 'CLIENT STORIES'}
@@ -30,12 +49,18 @@ export function Testimonials({
           }
         />
 
-        <StaggerContainer className="testimonial-grid" staggerDelay={0.12}>
-          {entries.map((_, i) => {
+        <motion.div
+          key={start}
+          className="testimonial-grid"
+          initial={{ opacity: 0, x: 24 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.38, ease: [0.22, 1, 0.36, 1] }}
+        >
+          {Array.from({ length: Math.min(3, entries.length) }, (_, i) => {
             const index = (start + i) % entries.length;
             const t = entries[index];
             return (
-              <StaggerItem key={t.name + i} variant="fade-up">
+              <div key={t.name}>
                 <motion.article
                   className="testimonial-card"
                   whileHover={{ y: -6, transition: { duration: 0.25 } }}
@@ -50,8 +75,15 @@ export function Testimonials({
                   <blockquote>“{t.quote}”</blockquote>
                   <div className="testimonial-person">
                     <Visual
-                      asset={{ src: '/images/avatars-sheet.webp', columns: 3, rows: 1, index }}
-                      alt="Illustrative client portrait"
+                      asset={
+                        t.image || {
+                          src: '/images/avatars-sheet.webp',
+                          columns: 3,
+                          rows: 1,
+                          index: index % 3,
+                        }
+                      }
+                      alt={`${t.name}, ${t.role}`}
                     />
                     <div>
                       <strong>{t.name}</strong>
@@ -59,10 +91,10 @@ export function Testimonials({
                     </div>
                   </div>
                 </motion.article>
-              </StaggerItem>
+              </div>
             );
           })}
-        </StaggerContainer>
+        </motion.div>
 
         <ScrollReveal variant="fade-up" delay={0.25} className="carousel-controls">
           <button
