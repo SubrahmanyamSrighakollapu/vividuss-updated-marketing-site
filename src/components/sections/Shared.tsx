@@ -88,7 +88,7 @@ export function Process({
     <section
       className={
         'section process-section process-flow-section ' +
-        (style === 'dark' ? 'dark-section' : 'pale-section') +
+        (style === 'dark' || style === 'green' ? 'dark-section' : 'pale-section') +
         ' ' +
         (compact ? 'process-compact' : '')
       }
@@ -165,9 +165,11 @@ export function CTA({
           </div>
         </ScrollReveal>
         
-        <ScrollReveal variant="zoom-in" delay={0.25}>
-          <p className="script">{script}</p>
-        </ScrollReveal>
+        {script && (
+          <ScrollReveal variant="zoom-in" delay={0.25}>
+            <p className="script">{script}</p>
+          </ScrollReveal>
+        )}
       </div>
     </section>
   );

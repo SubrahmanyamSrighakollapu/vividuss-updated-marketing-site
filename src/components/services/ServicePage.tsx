@@ -179,7 +179,7 @@ export function ServicePage({ service: s }: { service: Service }) {
         text={s.ctaText}
         label={s.ctaLabel}
         image={s.ctaImage}
-        script={s.ctaScript}
+        script={isWhatsApp ? '' : s.ctaScript}
         className={isWhatsApp ? 'whatsapp-cta' : ''}
       />
     </div>
